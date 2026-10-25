@@ -42,7 +42,9 @@ self.addEventListener('fetch', (e) => {
 
   if (req.mode === 'navigate') {
     e.respondWith(
-      fetch(req)
+      // no-cache: the page must be the newest one (the host lets browsers keep it for 10 minutes,
+      // and an old page points at code files that a newer deploy already removed).
+      fetch(req.url, { cache: 'no-cache', credentials: 'same-origin' })
         .then((res) => {
           if (res.ok) {
             const copy = res.clone();
