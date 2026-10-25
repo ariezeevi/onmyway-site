@@ -2,14 +2,15 @@
 //  - phone: "which phone?" (Android / iPhone), then the install steps for that phone and a button
 //    that opens the web app (which shows its own install sheet there)
 //  - the browser inside Instagram, Facebook and similar apps: how to open a real browser
-//  - a computer: a QR code for the phone
+//  - a computer: the same choice, with a QR code for the phone next to the steps
 (() => {
   const APP = 'https://onmyway.co.il/app/';
   const ua = navigator.userAgent || '';
   const inApp = /Instagram|FBAN|FBAV|FB_IAB|FBIOS|TikTok|musical_ly|Line\//i.test(ua);
   const ios = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   const android = /Android/i.test(ua);
-  const env = inApp ? 'inapp' : (ios || android ? 'phone' : 'desktop');
+  const env = inApp ? 'inapp' : 'phone';      // a computer gets the same choice, plus a QR for the phone
+  const desktop = !inApp && !(ios || android);
 
   const dlg = document.getElementById('get');
   if (!dlg || typeof dlg.showModal !== 'function') return;        // old browser: the plain link still works
@@ -36,9 +37,11 @@
   document.querySelectorAll('[data-download]').forEach((a) => {
     a.addEventListener('click', (e) => {
       e.preventDefault();
-      show(env === 'phone' ? 'phone' : env);
+      show(env);
+      dlg.querySelectorAll('[data-desktop-only]').forEach((x) => { x.hidden = !desktop; });
+      dlg.querySelectorAll('[data-open-app]').forEach((x) => { x.hidden = desktop; });
       if (env === 'phone') goStep('choose', false);
-      else dlg.setAttribute('aria-labelledby', env === 'desktop' ? 'get-h-desktop' : 'get-h-inapp');
+      else dlg.setAttribute('aria-labelledby', 'get-h-inapp');
       dlg.showModal();
     });
   });

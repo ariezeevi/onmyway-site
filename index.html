@@ -245,6 +245,7 @@
     <div class="get-step" data-step="choose">
       <h2 id="get-h-choose" tabindex="-1">איזה טלפון יש לך?</h2>
       <p>נראה לך איך מתקינים, בכמה צעדים קצרים.</p>
+      <p class="get-fine" data-desktop-only hidden>את ההתקנה עושים בטלפון. בחרו, וקוד QR יופיע ליד ההוראות.</p>
       <div class="get-choices">
         <button type="button" class="choice" data-pick="android">
           <svg viewBox="0 0 48 64" aria-hidden="true"><rect x="6" y="3" width="36" height="58" rx="7" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="24" cy="53" r="2.4" fill="currentColor"/><path d="M18 11h12" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
@@ -265,6 +266,10 @@
         <li>לא הופיע חלון? בתפריט של Chrome (<span dir="ltr">⋮</span> למעלה) בחרו ״התקן אפליקציה״ או ״הוסף למסך הבית״.</li>
         <li>פתחו את On My Way מהאייקון שנוסף במסך הבית.</li>
       </ol>
+      <div class="get-qrbox" data-desktop-only hidden>
+        <img class="get-qr" src="qr-app.svg" width="160" height="160" alt="קוד QR לפתיחת האפליקציה בטלפון">
+        <p>סרקו עם מצלמת הטלפון, ופתחו שם. אחר כך ההוראות למעלה.</p>
+      </div>
       <div class="get-actions">
         <a class="cta" href="https://onmyway.co.il/app/" data-open-app>פתח את האפליקציה</a>
         <button type="button" class="get-back" data-back>זה לא הטלפון שלי</button>
@@ -280,6 +285,10 @@
         <li>לחצו ״הוסף״ בפינה, ופתחו את On My Way מהאייקון.</li>
       </ol>
       <p class="get-fine">באייפון, התראות עובדות רק כשהאפליקציה מותקנת במסך הבית. אחרי שנפתח, האפליקציה תציג את הצעדים האלה שוב.</p>
+      <div class="get-qrbox" data-desktop-only hidden>
+        <img class="get-qr" src="qr-app.svg" width="160" height="160" alt="קוד QR לפתיחת האפליקציה בטלפון">
+        <p>סרקו עם מצלמת הטלפון, ופתחו שם. אחר כך ההוראות למעלה.</p>
+      </div>
       <div class="get-actions">
         <a class="cta" href="https://onmyway.co.il/app/" data-open-app>פתח את האפליקציה</a>
         <button type="button" class="get-back" data-back>זה לא הטלפון שלי</button>

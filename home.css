@@ -443,6 +443,7 @@ html.calm .cta::after,html.calm .hero .cta::after{animation:none!important}
 .get h2{font-size:clamp(1.5rem,3vw,1.9rem);line-height:1.2;padding-inline-start:48px;margin:0}
 .get p{margin:12px 0 0;color:var(--ink-soft);font-size:1.0625rem;line-height:1.6}
 .get-qr{display:block;margin:20px auto 4px;width:200px;height:200px;border-radius:18px;border:1px solid rgba(15,23,42,.08);background:#fff}
+.get-qrbox{text-align:center;margin:8px 0 4px}.get-qrbox .get-qr{width:160px;height:160px;margin:8px auto}.get-qrbox p{margin:4px 0 0;font-size:14px;color:#475569}
 .get-link{display:block;text-align:center;margin-top:14px;color:var(--blue-deep);font-weight:700;text-underline-offset:4px}
 .get-steps{margin:14px 0 0;padding-inline-start:22px;display:grid;gap:8px;color:var(--ink);font-size:1.0625rem;line-height:1.55}
 .get-actions{display:flex;flex-direction:column;gap:10px;margin-top:22px}
@@ -471,3 +472,4 @@ html.calm .get[open]{animation:none}
 .get-back{font:inherit;cursor:pointer;background:none;border:0;color:var(--ink-soft);font-size:.9375rem;min-height:44px;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(70,85,107,.35)}
 @media (hover:hover){.get-back:hover{color:var(--ink)}}
 .get-steps li::marker{font-weight:700;color:var(--blue-deep)}
+.get [hidden]{display:none!important}
