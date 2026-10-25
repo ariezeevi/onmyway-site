@@ -1,25 +1,103 @@
-<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>מדיניות פרטיות · On My Way</title><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="stylesheet" href="style.css"></head><body><main><a class="brand" href="index.html"><img src="logo.svg" alt=""><span>On My Way</span></a>
-<nav><a href="index.html">דף הבית</a><a href="terms.html">תנאי שימוש</a></nav>
-<h1>מדיניות פרטיות</h1><p class="muted">עודכן לאחרונה: 7.10.2026</p>
-<div class="note"><b>טיוטה.</b> נוסח ראשוני וברור, שיוחלף בנוסח משפטי לפני ההשקה לציבור.</div>
-<div class="card">
-<h2>איזה מידע אנחנו שומרים</h2><ul>
-<li>שם פרטי, תמונת פרופיל (אם הוספת), צבע תצוגה.</li>
-<li>תאריך לידה (פרטי, נראה רק לך ומשמש לבדיקת גיל).</li>
-<li>נסיעות ובקשות: יציאה, יעד, שעה, מקומות, השתתפות בהוצאות, ומסלול הנהג.</li>
-<li>הודעות בשיחה, דירוגים וביקורות, חברים, נסיעות קבועות, נקודות שהוספת.</li>
-<li>מזהה להתראות במכשיר (כדי לשלוח התראות).</li></ul>
-<h2>מיקום</h2><p>המיקום נקרא רק כשאתה מבקש (למשל "המיקום שלי"), או כשאישרת מיקום במסך הנסיעה. הוא אינו נשמר, חוץ ממיקום ששיתפת בשיחה או נקודה שהוספת.</p>
-<h2>עם מי המידע משותף</h2><ul>
-<li><b>Supabase</b> (שרת, אזור האיחוד האירופי): אחסון הנתונים.</li>
-<li><b>Mapbox</b> ו<b>Google Maps Platform</b>: חישוב מסלולים וחיפוש כתובות. נשלחות להם נקודות מסלול וטקסט חיפוש, ללא שם.</li>
-<li><b>Expo</b> (שירות הדחיפה): מזהה המכשיר והודעת ההתראה.</li>
-<li>משתמשים אחרים רואים את השם הפרטי, התמונה, הדירוג והנסיעות המשותפות שלך, ולא את תאריך הלידה.</li></ul>
-<p>איננו מוכרים מידע ואיננו מציגים פרסומות.</p>
-<h2>ילדים והורים</h2><p>מתחת לגיל 18 נסיעה דורשת אישור הורה שמחובר לחשבון. ההורה רואה את פרטי הנסיעה שנדרש לאשר.</p>
-<h2>המידע שלך בידיים שלך</h2><ul><li>מחיקת חשבון: באפליקציה, פרופיל ← מחיקת חשבון. כל המידע שלך נמחק.</li><li>לכל בקשה אחרת על המידע שלך: <a href="mailto:arie@onmyway.co.il">arie@onmyway.co.il</a></li></ul>
-<h2>אבטחה</h2><p>המידע מוצפן בתעבורה, וגישה אליו מוגבלת בכללים בבסיס הנתונים. אין מערכת בטוחה לחלוטין, ואנחנו משפרים את ההגנות כל הזמן.</p>
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>מדיניות פרטיות · On My Way</title>
+<meta name="description" content="איזה מידע On My Way שומרת, למה, עם מי הוא משותף, וכיצד אפשר למחוק אותו.">
+<meta name="theme-color" content="#F3F5F9">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="legal.css">
+<script src="a11y.js"></script>
+</head>
+<body class="legal-page">
+<a class="skip" href="#top">דלג לתוכן</a>
+<header class="bar glass">
+  <a class="brand" href="./" aria-label="On My Way, לדף הבית"><img src="logo.svg" alt="" width="22" height="30"><span dir="ltr">On My Way</span></a>
+  <nav class="legal-nav" aria-label="מסמכים">
+    <a href="privacy.html" aria-current="page">פרטיות</a><a href="terms.html">תנאי שימוש</a><a href="accessibility.html">נגישות</a><a href="contact.html">יצירת קשר</a>
+  </nav>
+</header>
+<main class="doc" id="top">
+<p class="draft"><strong>טיוטה.</strong> המסמך נכתב לפי מה שהאפליקציה עושה בפועל, אבל עדיין לא נבדק על ידי עורך דין. הוא יוחלף בנוסח משפטי לפני ההשקה לציבור.</p>
+<h1>מדיניות פרטיות</h1>
+<p class="meta">עודכן לאחרונה: 25.10.2026</p>
+<p class="lead">On My Way מחברת בין נהגים שכבר נוסעים לבין אנשים שצריכים להגיע לאותו כיוון. כדי שזה יעבוד אנחנו שומרים מעט מידע, ופה כתוב בדיוק איזה, למה, וכמה זמן.</p>
+
+<section><h2>מי אנחנו</h2>
+<p>האתר והאפליקציה מופעלים על ידי On My Way. פרטי המפעיל המשפטי (שם ומספר עוסק או תאגיד) יושלמו כאן לפני ההשקה. לכל שאלה על המידע שלך: <a href="mailto:arie@onmyway.co.il">arie@onmyway.co.il</a>.</p></section>
+
+<section><h2>איזה מידע אנחנו שומרים</h2>
+<ul>
+<li><strong>פרופיל:</strong> שם פרטי, צבע תצוגה, ותמונה אם הוספת. אם התחברת עם Google, גם החיבור לחשבון הזה.</li>
+<li><strong>תאריך לידה:</strong> נשמר כפרטי ונראה רק למערכת, ומשמש לבדיקה שאתה בן 18 ומעלה. משתמשים אחרים לא רואים אותו.</li>
+<li><strong>נסיעות ובקשות:</strong> נקודת יציאה, יעד, שעה, מושבים, השתתפות בהוצאות, ומסלול הנהג.</li>
+<li><strong>התאמות ושיחות:</strong> בקשות להצטרף, נקודות מפגש, הודעות, מיקום ששיתפת בשיחה, וקוד האיסוף של הנסיעה.</li>
+<li><strong>אמון ובטיחות:</strong> דירוגים וביקורות, חברים, חסימות ודיווחים.</li>
+<li><strong>נסיעות מתוכננות ונקודות:</strong> נסיעות קבועות שהגדרת, ונקודות איסוף שהוספת למפה.</li>
+<li><strong>התראות:</strong> מזהה המכשיר או הדפדפן שמאפשר לשלוח לך התראות, רק אם הפעלת אותן.</li>
+<li><strong>יומן שימוש ושגיאות:</strong> איזה מסכים נפתחים, קריסות, סוג המכשיר וגרסת האפליקציה. אין בו תוכן של הודעות. נועד לתקן תקלות ולהבין איפה אנשים נתקעים.</li>
+<li><strong>משוב:</strong> מה שתכתוב לנו דרך "שלח משוב".</li>
+</ul></section>
+
+<section><h2>מיקום</h2>
+<p>המיקום שלך נקרא רק כשאתה מבקש (למשל "המיקום שלי") ובמהלך נסיעה שהסכמת לה. הוא לא נשמר, חוץ מכמה מקרים:</p>
+<ul>
+<li>מיקום ששיתפת בשיחה, או נקודה שהוספת.</li>
+<li><strong>נהג בדרך לאיסוף:</strong> המיקום שלו מתעדכן לטרמפיסט שהסכים איתו על נסיעה, עד שהנסיעה יוצאת לדרך או מתבטלת, ואז נמחק.</li>
+</ul>
+<p>איש הקשר לחירום שאתה מגדיר נשמר רק במכשיר שלך.</p></section>
+
+<section><h2>עם מי המידע משותף</h2>
+<ul>
+<li><strong>משתמשים אחרים</strong> רואים את השם הפרטי, התמונה, הדירוג, הביקורות והנסיעות המשותפות איתך. הם לא רואים תאריך לידה.</li>
+<li><strong>Supabase</strong> (שרתים באיחוד האירופי): אחסון הנתונים והתחברות.</li>
+<li><strong>Mapbox ו־Google Maps:</strong> חישוב מסלולים והשלמת כתובות. נשלחים אליהם נקודות מסלול וטקסט חיפוש, בלי שם, דרך השרת שלנו.</li>
+<li><strong>OpenFreeMap ו־OpenStreetMap:</strong> תמונות המפה. הדפדפן שלך פונה אליהם ישירות, ולכן הם רואים כתובת IP.</li>
+<li><strong>Expo, Google ואפל:</strong> שליחת התראות למכשירים.</li>
+<li><strong>GitHub Pages ו־Cloudflare:</strong> אירוח האתר, וכתובת הדומיין והדואר.</li>
+</ul>
+<p>איננו מוכרים מידע, איננו מציגים פרסומות ואיננו משתמשים במידע לפרופיל פרסומי.</p></section>
+
+<section><h2>כמה זמן אנחנו שומרים</h2>
+<ul>
+<li>אחרי 30 יום, מיקומים מדויקים של נסיעות ישנות מעוגלים לכ־ק״מ, והמסלולים והמיקומים ששותפו בשיחה נמחקים.</li>
+<li>יומן שימוש ושגיאות נמחק אחרי 90 יום.</li>
+<li>שאר המידע נשמר כל עוד החשבון קיים.</li>
+</ul></section>
+
+<section><h2>מי יכול להשתמש</h2>
+<p>השירות מיועד לבני 18 ומעלה בלבד. אם נודע לנו שמשתמש צעיר יותר, נסגור את החשבון.</p></section>
+
+<section><h2>הזכויות שלך</h2>
+<ul>
+<li><strong>מחיקה:</strong> באפליקציה, פרופיל ← מחיקת חשבון. החשבון והמידע האישי שלך נמחקים. הודעות שכבר נשלחו נשארות אצל הצד השני, בלי שם השולח.</li>
+<li><strong>עיון, תיקון והעברה:</strong> אפשר לבקש במייל: <a href="mailto:arie@onmyway.co.il">arie@onmyway.co.il</a>. נענה בהקדם.</li>
+<li><strong>התראות והרשאות:</strong> אפשר לבטל בכל רגע בהגדרות הדפדפן או הטלפון.</li>
+</ul></section>
+
+<section><h2>אבטחה</h2>
+<p>המידע מוצפן בתעבורה, והגישה אליו מוגבלת בכללים בבסיס הנתונים. אין מערכת בטוחה לחלוטין, ואנחנו משפרים את ההגנות כל הזמן. אם נתקלת בפרצה, כתוב לנו.</p></section>
+
+<section><h2>שינויים במדיניות</h2>
+<p>כשהמדיניות תשתנה בצורה מהותית נעדכן את התאריך למעלה, ואם צריך נודיע גם באפליקציה.</p></section>
+
+<section class="en" lang="en" dir="ltr"><h2>Privacy, in short</h2>
+<p>We store: first name, an optional photo, a private date of birth (used only to check you are 18 or older), trips and requests, matches and chat messages, ratings, friends, planned trips, notification tokens, and a usage and error log. Location is read only when you ask and during a ride you agreed to; it is not stored except what you share in a chat, and a driver's live position before pickup, which is deleted once the ride starts or is cancelled. After 30 days exact ride locations are rounded to about 1 km and routes are deleted; the usage log is deleted after 90 days. Processors: Supabase (EU), Mapbox, Google Maps, OpenFreeMap, push services, GitHub Pages and Cloudflare. We do not sell data and show no ads. Delete your account in the app (Profile, Delete account). 18+ only. Contact: <a href="mailto:arie@onmyway.co.il">arie@onmyway.co.il</a>.</p></section>
+</main>
+<footer class="foot">
+  <a class="brand brand--foot" href="./"><img src="logo.svg" alt="" width="18" height="24"><span dir="ltr">On My Way</span></a>
+  <div class="foot-tools">
+  <nav aria-label="מידע">
+    <a href="privacy.html">מדיניות פרטיות</a>
+    <a href="terms.html">תנאי שימוש</a>
+    <a href="accessibility.html">נגישות</a>
+    <a href="contact.html">יצירת קשר</a>
+  </nav>
+  <button type="button" class="calm-btn" id="calm">עצור אנימציות</button>
 </div>
-<div class="en"><h2>Privacy (English summary)</h2><p>We store: first name, optional photo, date of birth (private, used only for age checks), trips and requests, chat messages, ratings, friends, recurring trips, and a device token for notifications. Location is read only when you ask and is not stored unless you share it. Processors: Supabase (EU), Mapbox, Google Maps Platform, Expo push. We do not sell data and show no ads. Under 18 a linked parent approves rides. Delete your account in the app (Profile, Delete account) and all your data is removed. Contact: arie@onmyway.co.il</p></div>
-</main></body></html>
+</footer>
+</body>
+</html>
