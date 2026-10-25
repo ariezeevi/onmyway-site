@@ -54,3 +54,60 @@ self.addEventListener('fetch', (e) => {
     );
   }
 });
+
+// Notifications: the server sends {title, body, data}; data says which screen it is about.
+// (iPhone requires every push to show something, so nothing is hidden when the app is open.)
+function urlFor(data) {
+  data = data || {};
+  if (data.screen === 'friends') return '/app/friends';
+  if (data.screen === 'driver') return '/app/driver';
+  if (data.screen === 'rider') return '/app/rider';
+  if (data.screen === 'publish' && data.recurring) return '/app/publish-now?recurring=' + encodeURIComponent(data.recurring);
+  if (data.with) return '/app/chat?with=' + encodeURIComponent(data.with);
+  if (data.matchId) return '/app/match?id=' + encodeURIComponent(data.matchId);
+  return '/app/';
+}
+
+self.addEventListener('push', (e) => {
+  let msg = {};
+  try {
+    msg = e.data ? e.data.json() : {};
+  } catch (err) {
+    msg = { title: 'On My Way', body: e.data ? e.data.text() : '' };
+  }
+  e.waitUntil(
+    self.registration.showNotification(msg.title || 'On My Way', {
+      body: msg.body || '',
+      icon: '/app/icons/icon-192.png',
+      badge: '/app/icons/icon-192.png',
+      dir: 'rtl',
+      lang: 'he',
+      data: msg.data || {},
+      tag: (msg.data && (msg.data.matchId || msg.data.with)) || undefined,
+      renotify: true,
+    }),
+  );
+});
+
+self.addEventListener('notificationclick', (e) => {
+  e.notification.close();
+  const target = urlFor(e.notification.data);
+  e.waitUntil(
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(async (list) => {
+      for (const c of list) {
+        if (c.url.indexOf('/app/') !== -1 && 'focus' in c) {
+          await c.focus();
+          if ('navigate' in c) {
+            try {
+              await c.navigate(target);
+            } catch (err) {
+              // fall through: the app is in front anyway
+            }
+          }
+          return;
+        }
+      }
+      await self.clients.openWindow(target);
+    }),
+  );
+});
