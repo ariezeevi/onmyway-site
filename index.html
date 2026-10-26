@@ -1,29 +1,321 @@
-<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>On My Way · גם ככה אתה נוסע, קח מישהו בדרך</title><meta name="description" content="On My Way מחברת נהגים שכבר נוסעים עם אנשים שצריכים להגיע לאותו כיוון. יודעים מראש מי עובר, מתי ואיפה, והנהג רואה כמה דקות זה מוסיף לו.">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="author" content="On My Way">
-<link rel="canonical" href="https://onmyway.co.il/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="On My Way">
-<meta property="og:url" content="https://onmyway.co.il/">
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>On My Way · גם ככה אתה נוסע. קח מישהו בדרך.</title>
+<meta name="description" content="אפליקציה שמחברת בין טרמפיסטים לנהגים: יודעים מראש מי עובר, מתי ואיפה.">
+<meta name="theme-color" content="#F3F5F9">
 <meta property="og:title" content="On My Way · גם ככה אתה נוסע. קח מישהו בדרך.">
-<meta property="og:description" content="נהגים וטרמפיסטים מתחברים. יודעים מראש מי עובר, מתי ואיפה.">
+<meta property="og:description" content="אפליקציה שמחברת בין טרמפיסטים לנהגים: יודעים מראש מי עובר, מתי ואיפה.">
 <meta property="og:locale" content="he_IL">
-<meta property="og:image" content="https://onmyway.co.il/og-image.png">
-<meta property="og:image:secure_url" content="https://onmyway.co.il/og-image.png">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="On My Way: גם ככה אתה נוסע. קח מישהו בדרך.">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="On My Way · גם ככה אתה נוסע. קח מישהו בדרך.">
-<meta name="twitter:description" content="נהגים וטרמפיסטים מתחברים. יודעים מראש מי עובר, מתי ואיפה.">
-<meta name="twitter:image" content="https://onmyway.co.il/og-image.png">
-<meta name="twitter:image:alt" content="On My Way: גם ככה אתה נוסע. קח מישהו בדרך.">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"On My Way","url":"https://onmyway.co.il/","description":"אפליקציה שמחברת נהגים שכבר נוסעים עם אנשים שצריכים להגיע לאותו כיוון.","inLanguage":"he","applicationCategory":"TravelApplication","operatingSystem":"Android, iOS, Web","image":"https://onmyway.co.il/og-image.png","offers":{"@type":"Offer","price":"0","priceCurrency":"ILS"}}</script>
-<link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="stylesheet" href="style.css"></head><body><main>
-<img class="hero" src="logo.svg" alt="On My Way"><h1>On My Way</h1><p class="muted">גם ככה אתה נוסע. קח מישהו בדרך.</p>
-<div class="card"><p>אפליקציה שמחברת בין נהגים שכבר נוסעים לבין אנשים שצריכים להגיע לאותו כיוון. השתתפות בהוצאות בלבד, בלי מטרת רווח.</p>
-<p>האפליקציה נמצאת עכשיו בבטא סגורה בישראל.</p></div>
-<nav style="margin-top:20px"><a href="privacy.html">מדיניות פרטיות</a><a href="terms.html">תנאי שימוש</a><a href="mailto:arie@onmyway.co.il">יצירת קשר</a></nav>
-</main></body></html>
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/Heebo_800ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="home.css">
+<script>document.documentElement.classList.add('js')</script>
+<script src="a11y.js"></script>
+</head>
+<body>
+<a class="skip" href="#top">דלג לתוכן</a>
+
+<svg class="contours" aria-hidden="true"></svg>
+
+<header class="bar glass" id="bar">
+  <a class="brand" href="#top" aria-label="On My Way, לראש הדף">
+    <img src="logo.svg" alt="" width="22" height="30">
+    <span dir="ltr">On My Way</span>
+  </a>
+  <!-- Download hook: every element with data-download is a download button. See HOOKS.md -->
+  <a class="cta cta--sm" href="https://onmyway.co.il/app/" data-download tabindex="-1">הורד את האפליקציה</a>
+</header>
+
+<div class="inapp glass" id="inapp" role="status" hidden>
+  <p><strong>אתה בתוך הדפדפן של האפליקציה שממנה הגעת.</strong> כדי להתקין, פתח את הדף בדפדפן רגיל: לחץ על <span dir="ltr">⋯</span> ובחר ״פתח בדפדפן״.</p>
+  <div class="inapp-actions"><button type="button" class="inapp-copy" id="inapp-copy">העתק קישור</button><button type="button" class="inapp-x" id="inapp-x" aria-label="סגור">✕</button></div>
+</div>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-copy">
+      <h1><span>גם ככה אתה נוסע.</span> <span class="accent">קח מישהו בדרך.</span></h1>
+      <p class="lede">On My Way מחברת בין מי שכבר נוסע למי שצריך להגיע לאותו כיוון.</p>
+      <div class="hooks">
+        <p class="hook hook--rider glass"><span class="hook-dot" aria-hidden="true"></span><span><strong>נמאס לחכות שעות לאוטובוס, או לטרמפ שלא עוצר?</strong> רואים מראש מי נוסע לכיוון שלך, ומתי.</span></p>
+        <p class="hook hook--driver glass"><span class="hook-dot" aria-hidden="true"></span><span><strong>יש לך מושב ריק בדרך?</strong> אתה נוסע ממילא. מה אכפת לך לקחת מישהו? מעשה טוב, והשתתפות בדלק.</span></p>
+      </div>
+      <a class="cta" href="https://onmyway.co.il/app/" data-download id="hero-cta">
+        <span class="cta-badge" aria-hidden="true"><svg class="cta-icon" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        הורד את האפליקציה
+      </a>
+      <p class="cta-sub">חינם · בלי חנות אפליקציות · מתקינים ישר מהדפדפן</p>
+    </div>
+    <div class="hero-mark" aria-hidden="true">
+      <svg class="mark" viewBox="100 50 290 390">
+        <defs>
+          <linearGradient id="mr" gradientUnits="userSpaceOnUse" x1="132" y1="407" x2="364" y2="85"><stop offset="0" stop-color="#1B5FC4"/><stop offset=".55" stop-color="#1E6FD9"/><stop offset="1" stop-color="#6FA8F5"/></linearGradient>
+          <linearGradient id="ms" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF9F45"/><stop offset="1" stop-color="#EF6C00"/></linearGradient>
+        </defs>
+        <path class="m-road" pathLength="1" d="M132 407 C132 330 176 307 248 286 C331 262 364 217 364 85" fill="none" stroke="url(#mr)" stroke-width="40" stroke-linecap="round"/>
+        <circle class="m-start" cx="132" cy="407" r="24.8" fill="#1B5FC4"/>
+        <circle class="m-end" cx="364" cy="85" r="14" fill="#fff" stroke="#6FA8F5" stroke-width="6"/>
+        <circle class="m-end-ring" cx="364" cy="85" r="14" fill="none" stroke="#1E6FD9" stroke-width="4"/>
+        <line class="m-link" x1="248" y1="286" x2="248" y2="286" stroke="#EF6C00" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="1 8" opacity="0"/>
+        <circle class="m-ring" cx="248" cy="286" r="30" fill="none" stroke="#EF6C00" stroke-width="3"/>
+        <g class="m-hiker-wrap"><g class="m-hiker">
+          <circle cx="248" cy="286" r="30" fill="#F3F5F9"/>
+          <circle cx="248" cy="286" r="23" fill="url(#ms)"/>
+          <g class="m-thumb" fill="#fff">
+            <circle cx="243.5" cy="274.2" r="4.3"/>
+            <path d="M238.8 281.8 Q243.5 279.4 248.2 281.8 L248.8 296.4 Q243.5 298 238.2 296.4Z"/>
+            <g fill="none" stroke="#fff" stroke-width="3.3" stroke-linecap="round"><path d="M240.5 296 L239.8 306.6 M246.6 296 L247.4 306.6"/><path d="M247 283.4 L258.8 278.6"/><path d="M239.6 283.4 L237.4 291.4"/></g>
+            <rect x="257" y="268.4" width="3.8" height="10.2" rx="1.9"/>
+          </g>
+        </g></g>
+        <g class="m-tag m-tag--wait" opacity="0" transform="translate(312 332)"><g class="m-tag-in"><rect x="-50" y="-13" width="100" height="26" rx="13" fill="#fff" stroke="#EF6C00" stroke-width="1.6"/><text x="0" y="4.5" text-anchor="middle" font-family="Heebo,sans-serif" font-weight="700" font-size="13" fill="#B84F00">מחכה לטרמפ</text></g></g>
+        <g class="m-tag m-tag--seat" opacity="0"><g class="m-tag-in"><rect x="-46" y="-13" width="92" height="26" rx="13" fill="#fff" stroke="#1859B4" stroke-width="1.6"/><text x="0" y="4.5" text-anchor="middle" font-family="Heebo,sans-serif" font-weight="700" font-size="13" fill="#1859B4">מושב פנוי</text></g></g>
+        <g class="m-car" opacity="0">
+          <g transform="scale(1.12)">
+            <rect x="-12" y="-19" width="24" height="42" rx="9" fill="rgba(15,30,60,.25)"/>
+            <rect x="-11" y="-21" width="22" height="42" rx="8.5" fill="#fff" stroke="#1859B4" stroke-width="1.6"/>
+            <rect x="-7.6" y="-13.5" width="15.2" height="7" rx="2.6" fill="#1859B4"/>
+            <rect x="-7" y="9.5" width="14" height="5" rx="2" fill="#1859B4" opacity=".75"/>
+            <rect x="-8.5" y="-21.4" width="4.5" height="2.4" rx="1.2" fill="#FFD27A"/>
+            <rect x="4" y="-21.4" width="4.5" height="2.4" rx="1.2" fill="#FFD27A"/>
+            <circle class="m-passenger" cx="0" cy="1.6" r="4.4" fill="#EF6C00" opacity="0"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <div class="journey">
+    <svg class="road" aria-hidden="true">
+      <defs>
+        <linearGradient id="rg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1000"><stop offset="0" stop-color="#1B5FC4"/><stop offset=".6" stop-color="#1E6FD9"/><stop offset="1" stop-color="#6FA8F5"/></linearGradient>
+        <mask id="reveal" maskUnits="userSpaceOnUse"><path class="r-mask" fill="none" stroke="#fff" stroke-linecap="round"/></mask>
+      </defs>
+      <path class="r-ghost" fill="none" stroke-linecap="round"/>
+      <g mask="url(#reveal)">
+        <path class="r-casing" fill="none" stroke-linecap="round"/>
+        <path class="r-road" fill="none" stroke="url(#rg)" stroke-linecap="round"/>
+        <path class="r-line" fill="none" stroke-linecap="round"/>
+      </g>
+      <circle class="r-start" r="16"/>
+      <g class="r-end"><circle class="r-end-pulse" r="16"/><circle class="r-end-dot" r="13"/></g>
+      <g class="riders"></g>
+      <g class="car" opacity="0">
+        <g class="car-body">
+          <rect class="car-shadow" x="-12" y="-19" width="24" height="42" rx="9"/>
+          <rect x="-11" y="-21" width="22" height="42" rx="8.5" fill="#fff" stroke="#1859B4" stroke-width="1.6"/>
+          <rect x="-7.6" y="-13.5" width="15.2" height="7" rx="2.6" fill="#1859B4"/>
+          <rect x="-7" y="9.5" width="14" height="5" rx="2" fill="#1859B4" opacity=".75"/>
+          <rect x="-8.5" y="-21.4" width="4.5" height="2.4" rx="1.2" fill="#FFD27A"/>
+          <rect x="4" y="-21.4" width="4.5" height="2.4" rx="1.2" fill="#FFD27A"/>
+          <circle class="passenger" cx="0" cy="1.6" r="4.4" fill="#EF6C00"/>
+        </g>
+      </g>
+    </svg>
+
+    <span class="road-start" aria-hidden="true"></span>
+
+    <!-- 1. Who we are, and everywhere we went without a car -->
+    <section class="stop stop--steps" id="dest" data-road data-side="start" data-steps="5" style="--step:17vh">
+      <div class="sticky">
+        <div class="card card--scene glass reveal">
+          <h2>On My Way נולדה בצד הכביש.</h2>
+          <p>מ־15 שנה של טרמפים ואוטובוסים, לכל מקום בארץ:</p>
+          <div class="stage">
+            <div class="scene" data-scene="school" data-i="0"></div>
+            <div class="scene" data-scene="dorm" data-i="1"></div>
+            <div class="scene" data-scene="trip" data-i="2"></div>
+            <div class="scene" data-scene="army" data-i="3"></div>
+            <div class="scene" data-scene="family" data-i="4"></div>
+          </div>
+          <ul class="signs" aria-label="לאן נסענו">
+            <li data-i="0">בית ספר וחברים</li><li data-i="1">פנימייה ומכינה</li>
+            <li data-i="2">טיולים</li><li data-i="3">צבא</li><li data-i="4">בת זוג, סבא וסבתא, הורים</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. The bus -->
+    <section class="stop stop--steps" id="bus" data-road data-side="end" data-steps="4" style="--step:20vh">
+      <div class="sticky">
+        <div class="card card--scene glass reveal">
+          <h2>20 דקות ברכב. שעה וחצי באוטובוס.</h2>
+          <div class="stage">
+            <div class="scene" data-scene="race" data-i="0"></div>
+            <div class="scene" data-scene="missed" data-i="1"></div>
+            <div class="scene" data-scene="wait" data-i="2"></div>
+            <div class="scene scene--dark" data-scene="night" data-i="3"></div>
+          </div>
+          <ol class="captions">
+            <li data-i="0">זה פשוט לא הגיוני.</li>
+            <li data-i="1">מפספסים את האוטובוס ברגע האחרון.</li>
+            <li data-i="2">ומחכים שעה שלמה לבא.</li>
+            <li data-i="3">ובלילה, כשאין קו: הולכים ברגל. לבד. בחושך.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Waiting for a ride in every weather -->
+    <section class="stop stop--steps" id="weather" data-road data-side="start" data-steps="5" style="--step:11vh">
+      <div class="sticky">
+        <div class="card card--scene glass reveal">
+          <div class="stage stage--single">
+            <div class="scene is-on" data-scene="weather" data-w="heat"></div>
+          </div>
+          <p class="words" aria-label="חום, קור, גשם, ברד">
+            <span data-i="0">חום.</span> <span data-i="1">קור.</span> <span data-i="2">גשם.</span> <span data-i="3">ברד.</span>
+          </p>
+          <h2 class="nobody" data-i="4">ושום טרמפ לא עוצר.</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. A stranger -->
+    <section class="stop" data-road data-side="end" style="--h:78vh">
+      <div class="card card--scene glass reveal">
+        <h2>ואתה לא יודע מי יעצור.</h2>
+        <div class="stage stage--single"><div class="scene is-on" data-scene="stranger"></div></div>
+        <p>מצביעים לרכב שלא מכירים, ומקווים. בלי לדעת מי זה, לאן הוא נוסע, ואם בכלל יעצור.</p>
+      </div>
+    </section>
+
+    <!-- 5. The turn: knowing in advance -->
+    <section class="stop stop--peak" id="peak" data-road data-side="start" data-rider="pickup" style="--h:125vh">
+      <div class="card glass">
+        <h2 class="peak-title">יודעים מראש.</h2>
+        <p class="peak-lines"><span>מי עובר.</span> <span>מתי.</span> <span>ואיפה נפגשים.</span></p>
+        <p>On My Way מחברת בין נהגים לטרמפיסטים, כך שקובעים מראש במקום לחכות שעות בצד הכביש. אתה יודע מי הנהג שאוסף אותך, והנהג יודע את מי הוא אוסף: עם פרטים ודירוג של אנשים שכבר נסעו איתו.</p>
+      </div>
+    </section>
+
+    <!-- 6. The message -->
+    <section class="stop stop--message" data-road data-side="end" style="--h:82vh">
+      <div class="card glass reveal">
+        <h2>ולך תדע, אולי מישהו כבר נוסע לידך.</h2>
+        <p>גם כשאתה סתם צריך להגיע ממקום למקום בעיר. אפשר לפרסם רק לחברים, רק למי שאתה מכיר. אולי בדיוק מישהו מהם נוסע לאזור שלך, ואתה פשוט לא יודע.</p>
+        <svg class="city" viewBox="0 0 320 120" aria-hidden="true">
+          <g class="streets"><path d="M0 30H320M0 90H320M60 0V120M160 0V120M260 0V120"/></g>
+          <circle class="friend f1" cx="0" cy="30" r="6"/>
+          <circle class="friend f2" cx="160" cy="0" r="6"/>
+          <circle class="friend f3" cx="320" cy="90" r="6"/>
+          <circle class="me-ring" cx="210" cy="90" r="9"/>
+          <circle class="me" cx="210" cy="90" r="7"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="stop stop--close" data-side="center">
+      <span class="dest" data-road aria-hidden="true"></span>
+      <div class="card glass reveal">
+        <h2>אז מה אומרים, רוצים להיות הראשונים שמנסים?</h2>
+        <a class="cta cta--lg" href="https://onmyway.co.il/app/" data-download>
+          <span class="cta-badge" aria-hidden="true"><svg class="cta-icon" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          הורד את האפליקציה
+        </a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="foot">
+  <a class="brand brand--foot" href="#top"><img src="logo.svg" alt="" width="18" height="24"><span dir="ltr">On My Way</span></a>
+  <div class="foot-tools">
+  <nav aria-label="מידע">
+    <a href="privacy.html">מדיניות פרטיות</a>
+    <a href="terms.html">תנאי שימוש</a>
+    <a href="accessibility.html">נגישות</a>
+    <a href="contact.html">יצירת קשר</a>
+  </nav>
+  <button type="button" class="calm-btn" id="calm">עצור אנימציות</button>
+</div>
+</footer>
+
+<script src="scenes.js" defer></script>
+<dialog class="get glass" id="get" aria-labelledby="get-h-choose">
+  <button type="button" class="get-x" id="get-x" aria-label="סגור">✕</button>
+
+  <div class="get-body" data-env="phone" hidden>
+    <div class="get-step" data-step="choose">
+      <h2 id="get-h-choose" tabindex="-1">איזה טלפון יש לך?</h2>
+      <p>נראה לך איך מתקינים, בכמה צעדים קצרים.</p>
+      <p class="get-fine" data-desktop-only hidden>את ההתקנה עושים בטלפון. בחרו, וקוד QR יופיע ליד ההוראות.</p>
+      <div class="get-choices">
+        <button type="button" class="choice" data-pick="android">
+          <svg viewBox="0 0 48 64" aria-hidden="true"><rect x="6" y="3" width="36" height="58" rx="7" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="24" cy="53" r="2.4" fill="currentColor"/><path d="M18 11h12" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          <span class="choice-name">אנדרואיד</span><span class="choice-tag" hidden>נראה שזה שלך</span>
+        </button>
+        <button type="button" class="choice" data-pick="ios">
+          <svg viewBox="0 0 48 64" aria-hidden="true"><rect x="6" y="3" width="36" height="58" rx="9" fill="none" stroke="currentColor" stroke-width="3"/><rect x="16" y="8" width="16" height="5" rx="2.5" fill="currentColor"/><path d="M18 54h12" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          <span class="choice-name">אייפון</span><span class="choice-tag" hidden>נראה שזה שלך</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="get-step" data-step="android" hidden>
+      <h2 id="get-h-android" tabindex="-1">התקנה באנדרואיד</h2>
+      <ol class="get-steps">
+        <li>לחצו על ״פתח את האפליקציה״. היא נפתחת ב־Chrome.</li>
+        <li>כשיופיע החלון ״להתקין את On My Way?״, לחצו ״התקן״.</li>
+        <li>לא הופיע חלון? בתפריט של Chrome (<span dir="ltr">⋮</span> למעלה) בחרו ״התקן אפליקציה״ או ״הוסף למסך הבית״.</li>
+        <li>פתחו את On My Way מהאייקון שנוסף במסך הבית.</li>
+      </ol>
+      <div class="get-qrbox" data-desktop-only hidden>
+        <img class="get-qr" src="qr-app.svg" width="160" height="160" alt="קוד QR לפתיחת האפליקציה בטלפון">
+        <p>סרקו עם מצלמת הטלפון, ופתחו שם. אחר כך ההוראות למעלה.</p>
+      </div>
+      <div class="get-actions">
+        <a class="cta" href="https://onmyway.co.il/app/" data-open-app>פתח את האפליקציה</a>
+        <button type="button" class="get-back" data-back>זה לא הטלפון שלי</button>
+      </div>
+    </div>
+
+    <div class="get-step" data-step="ios" hidden>
+      <h2 id="get-h-ios" tabindex="-1">התקנה באייפון</h2>
+      <ol class="get-steps">
+        <li>לחצו על ״פתח את האפליקציה״. חשוב: ב־Safari.</li>
+        <li>לחצו על כפתור השיתוף <svg class="get-glyph" viewBox="0 0 24 24" role="img" aria-label="ריבוע עם חץ למעלה"><path d="M12 15V3m0 0L8 7m4-4l4 4M6 11H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> בתחתית המסך.</li>
+        <li>גללו ובחרו ״הוסף למסך הבית״ <svg class="get-glyph" viewBox="0 0 24 24" role="img" aria-label="ריבוע עם פלוס"><rect x="3.5" y="3.5" width="17" height="17" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 8v8M8 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></li>
+        <li>לחצו ״הוסף״ בפינה, ופתחו את On My Way מהאייקון.</li>
+      </ol>
+      <p class="get-fine">באייפון, התראות עובדות רק כשהאפליקציה מותקנת במסך הבית. אחרי שנפתח, האפליקציה תציג את הצעדים האלה שוב.</p>
+      <div class="get-qrbox" data-desktop-only hidden>
+        <img class="get-qr" src="qr-app.svg" width="160" height="160" alt="קוד QR לפתיחת האפליקציה בטלפון">
+        <p>סרקו עם מצלמת הטלפון, ופתחו שם. אחר כך ההוראות למעלה.</p>
+      </div>
+      <div class="get-actions">
+        <a class="cta" href="https://onmyway.co.il/app/" data-open-app>פתח את האפליקציה</a>
+        <button type="button" class="get-back" data-back>זה לא הטלפון שלי</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="get-body" data-env="desktop" hidden>
+    <h2 id="get-h-desktop" tabindex="-1">האפליקציה מיועדת לטלפון</h2>
+    <p>סרקו את הקוד עם מצלמת הטלפון, ונפתח שם את On My Way.</p>
+    <img class="get-qr" src="qr-app.svg" width="200" height="200" alt="קוד QR לפתיחת האפליקציה בטלפון">
+    <a class="get-link" href="https://onmyway.co.il/app/">או פתחו אותה כאן בדפדפן</a>
+  </div>
+
+  <div class="get-body" data-env="inapp" hidden>
+    <h2 id="get-h-inapp" tabindex="-1">פותחים בדפדפן רגיל</h2>
+    <p>את האפליקציה אי אפשר להתקין מתוך הדפדפן הפנימי שבו נפתח הדף. שני צעדים:</p>
+    <ol class="get-steps"><li>לחצו על <span dir="ltr">⋯</span> בפינת המסך.</li><li>בחרו ״פתח בדפדפן״ (Chrome או Safari).</li></ol>
+    <div class="get-actions">
+      <button type="button" class="cta" id="get-copy">העתק קישור</button>
+      <a class="cta cta--ghost" id="get-try" href="https://onmyway.co.il/app/">נסה לפתוח בדפדפן</a>
+    </div>
+    <p class="get-fine">אם זה לא נפתח, העתיקו את הקישור והדביקו בדפדפן.</p>
+  </div>
+</dialog>
+
+<script src="get.js" defer></script>
+<script src="home.js" defer></script>
+</body>
+</html>
