@@ -13,5 +13,7 @@
 - [Home](https://onmyway.co.il/): what the app is and how to start
 - [Privacy policy](https://onmyway.co.il/privacy.html): what data is kept, why, and how to delete it
 - [Terms of use](https://onmyway.co.il/terms.html)
+- [Cookies and browser storage](https://onmyway.co.il/cookies.html)
+- [Refunds and cancellations](https://onmyway.co.il/refunds.html)
 - [Accessibility statement](https://onmyway.co.il/accessibility.html)
 - [Contact](https://onmyway.co.il/contact.html): arie@onmyway.co.il
