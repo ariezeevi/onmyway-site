@@ -1,0 +1,17 @@
+# On My Way
+
+> On My Way (onmyway.co.il) is a free Hebrew app in Israel that connects drivers who are already on their way with people who need a ride in the same direction (hitchhiking, "טרמפ"). The driver sees how many minutes a rider adds to the trip; the rider knows in advance who is passing, when and where.
+
+- Free to use. A driver may ask for an optional share of fuel costs, within the legal limit; the app does not take any money.
+- For adults (18+). Hebrew, right-to-left.
+- Runs as an installable web app at https://onmyway.co.il/app/ (Android and iPhone, from the browser).
+- Pickups are suggested at safe stops: community hitchhiking spots ("טרמפיאדות"), bus stops and petrol stations.
+- Safety: ratings, a personal start code for each ride, trip sharing and an SOS button.
+
+## Pages
+
+- [Home](https://onmyway.co.il/): what the app is and how to start
+- [Privacy policy](https://onmyway.co.il/privacy.html): what data is kept, why, and how to delete it
+- [Terms of use](https://onmyway.co.il/terms.html)
+- [Accessibility statement](https://onmyway.co.il/accessibility.html)
+- [Contact](https://onmyway.co.il/contact.html): arie@onmyway.co.il

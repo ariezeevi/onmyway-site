@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+# The web app's inner screens are app states, not pages.
+Disallow: /app/
+Allow: /app/$
+
+Sitemap: https://onmyway.co.il/sitemap.xml
