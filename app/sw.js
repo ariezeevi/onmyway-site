@@ -6,7 +6,8 @@
 //   launch; the stored page is used only when there is no connection.
 // - Nothing else (Supabase, maps, routing) is touched: live data stays live.
 const CACHE = 'omw-v1';
-const HASHED = ['/app/_expo/static/', '/app/assets/'];
+// /app/data/ files carry a version in their name (safe-spots.v1.json): also safe to keep.
+const HASHED = ['/app/_expo/static/', '/app/assets/', '/app/data/'];
 
 // Every new version adds files with new names: keep the newest MAX_FILES, drop the oldest.
 const MAX_FILES = 200;
