@@ -596,3 +596,37 @@ html.calm .reveal .beats li{opacity:1!important;transform:none!important;transit
   .step-n{flex:none}
   .seen-cols{grid-template-columns:1fr}
 }
+
+/* Eyebrow, secondary link, top menu, FAQ (added 2026-11-02, ideas from sligi.co.il) */
+html{scroll-padding-top:84px}
+.eyebrow{margin-bottom:12px;font-size:1rem;font-weight:700;color:var(--orange-text);letter-spacing:.01em}
+.more-link{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-weight:700;color:var(--blue-deep);text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1.5px;min-height:44px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.menu{position:relative;margin-inline-start:auto}
+.menu-list{list-style:none;margin:0;padding:0;display:flex;gap:4px}
+.menu-list a{display:flex;align-items:center;min-height:44px;padding:0 14px;border-radius:999px;text-decoration:none;font-weight:500;color:var(--ink-soft)}
+.menu-btn{display:none}
+@media (hover:hover){.menu-list a:hover{background:rgba(15,23,42,.06);color:var(--ink)}}
+@media (max-width:959px){
+  .menu-btn{display:grid;place-items:center;width:44px;height:44px;border:0;border-radius:999px;background:transparent;cursor:pointer;color:var(--ink)}
+  .menu-lines,.menu-lines::before,.menu-lines::after{display:block;width:18px;height:2px;border-radius:2px;background:currentColor;position:relative;transition:transform .2s var(--ease),opacity .2s}
+  .menu-lines::before,.menu-lines::after{content:"";position:absolute;inset-inline-start:0}
+  .menu-lines::before{top:-6px}.menu-lines::after{top:6px}
+  .menu.open .menu-lines{background:transparent}
+  .menu.open .menu-lines::before{transform:translateY(6px) rotate(45deg)}
+  .menu.open .menu-lines::after{transform:translateY(-6px) rotate(-45deg)}
+  .menu-list{display:none;position:fixed;top:76px;inset-inline:12px;max-width:420px;margin-inline:auto;flex-direction:column;gap:2px;padding:8px;border-radius:20px;
+    background:rgba(255,255,255,.97);box-shadow:0 18px 40px -12px rgba(15,23,42,.28),0 0 0 1px rgba(15,23,42,.06)}
+  .menu.open .menu-list{display:flex}
+  .menu-list a{color:var(--ink);font-size:1.0625rem}
+}
+.faq{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:24px var(--gutter) 72px}
+.faq-box{border-radius:var(--radius);padding:clamp(22px,3vw,40px)}
+.faq h2{font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.15;margin-bottom:14px}
+.faq-q{border-top:1px solid rgba(15,23,42,.08)}
+.faq-q:last-child{border-bottom:1px solid rgba(15,23,42,.08)}
+.faq-q summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:56px;padding:10px 0;font-size:1.125rem;font-weight:700}
+.faq-q summary::-webkit-details-marker{display:none}
+.faq-q summary::after{content:"+";flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:999px;background:rgba(30,111,217,.1);color:var(--blue-deep);font-size:1.25rem;font-weight:500;transition:transform .2s var(--ease)}
+.faq-q[open] summary::after{transform:rotate(45deg)}
+.faq-q p{padding:0 0 16px;color:var(--ink-soft);font-size:1.0625rem;line-height:1.6;max-width:62ch}

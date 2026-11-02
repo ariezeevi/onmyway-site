@@ -31,10 +31,11 @@
 <link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preload" href="fonts/Heebo_800ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="home.css?v=20261102c">
+<link rel="stylesheet" href="home.css?v=20261102d">
 <link rel="stylesheet" href="screens.css">
 <script>document.documentElement.classList.add('js')</script>
 <script src="a11y.js"></script>
+<script src="menu.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#top">דלג לתוכן</a>
@@ -46,6 +47,15 @@
     <img src="logo.svg" alt="" width="22" height="30">
     <span dir="ltr">On My Way</span>
   </a>
+  <nav class="menu" id="menu" aria-label="ניווט בדף">
+    <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu-list"><span class="menu-lines" aria-hidden="true"></span><span class="sr">תפריט</span></button>
+    <ul class="menu-list" id="menu-list">
+      <li><a href="#how">איך זה עובד</a></li>
+      <li><a href="#seen">מה רואים עליך</a></li>
+      <li><a href="#safety">בטיחות</a></li>
+      <li><a href="#faq">שאלות</a></li>
+    </ul>
+  </nav>
   <!-- Download hook: every element with data-download opens the app (get.js). data-src says which button, for counting. -->
   <a class="cta cta--sm" href="https://onmyway.co.il/app/" data-download data-src="bar">פתח את האפליקציה · חינם</a>
 </header>
@@ -63,6 +73,7 @@
 
   <section class="hero">
     <div class="hero-copy">
+      <p class="eyebrow">אפליקציית טרמפים · חינם</p>
       <h1><span>טרמפים,</span> <span class="accent">בלי לחכות בצומת.</span></h1>
       <p class="lede">נהגים כותבים לאן הם נוסעים. מי שצריך טרמפ כותב מאיפה ולאן. On My Way מחברת ביניהם.</p>
       <div class="hooks">
@@ -74,6 +85,7 @@
         פתח את האפליקציה · חינם
       </a>
       <p class="cta-sub">חינם · בלי חנות אפליקציות · נפתח ישר בדפדפן</p>
+      <a class="more-link" href="#how">איך זה עובד <span aria-hidden="true">←</span></a>
     </div>
     <div class="hero-mark" aria-hidden="true">
       <svg class="mark" viewBox="100 50 290 390">
@@ -114,7 +126,7 @@
     </div>
   </section>
 
-  <section class="explain" aria-labelledby="how-h">
+  <section class="explain" id="how" aria-labelledby="how-h">
     <div class="how glass">
       <h2 id="how-h">איך זה עובד</h2>
       <ol class="steps">
@@ -125,7 +137,7 @@
       </ol>
     </div>
 
-    <div class="seen glass" aria-labelledby="seen-h">
+    <div class="seen glass" id="seen" aria-labelledby="seen-h">
       <h2 id="seen-h">מה אחרים רואים עליכם?</h2>
       <div class="seen-cols">
         <div class="seen-col seen-col--yes">
@@ -217,7 +229,7 @@
     </section>
 
     <!-- 3. Safety -->
-    <section class="stop stop--safety" data-road data-side="start" style="--h:90vh">
+    <section class="stop stop--safety" id="safety" data-road data-side="start" style="--h:90vh">
       <div class="card glass reveal">
         <h2>מה כבר יש בשביל הבטיחות</h2>
         <div class="stage stage--single stage--video"><video class="clip" muted loop playsinline preload="none" poster="media/code.jpg" aria-hidden="true" tabindex="-1"><source src="media/code.mp4" type="video/mp4"></video></div>
@@ -256,7 +268,22 @@
       </div>
     </section>
   </div>
+
+  <section class="faq" id="faq" aria-labelledby="faq-h">
+    <div class="faq-box glass">
+      <h2 id="faq-h">שאלות נפוצות</h2>
+      <details class="faq-q"><summary>כמה זה עולה?</summary><p>האפליקציה חינם. הנהג מחליט מראש אם הנסיעה חינם או שהוא מבקש השתתפות בהוצאות, ורואים את זה לפני שמבקשים. לפי החוק אפשר לבקש עד 2 ₪ לק״מ. הכסף, אם יש, עובר ביניכם ולא דרך האפליקציה.</p></details>
+      <details class="faq-q"><summary>מי רואה את הפרטים שלי?</summary><p>רואים את השם שבחרתם, תמונה אם הוספתם, דירוג, ומאיפה ולאן אתם צריכים טרמפ. מספר טלפון, מייל ותאריך לידה לא מוצגים לאף אחד. ואתם בוחרים מי רואה את הבקשה: כל מי שבדרך, רק חברים, או גם חברים של חברים.</p></details>
+      <details class="faq-q"><summary>איך אני יודע/ת עם מי אני נוסע/ת?</summary><p>לפני שמאשרים רואים שם, תמונה, דירוג וביקורות של מי שכבר נסע איתו. הנסיעה מתחילה רק כשהנהג מקליד את הקוד האישי של הנוסע, ובזמן הנסיעה אפשר לשתף אותה ויש כפתור SOS. עוד אין אימות של תעודת זהות, ונוסיף אותו בהמשך.</p></details>
+      <details class="faq-q"><summary>ומה אם אני לא יכול/ה להגיע?</summary><p>לפני האיסוף האפליקציה שואלת את שני הצדדים "עדיין מגיע/ה?", ואפשר לבטל בלחיצה. הצד השני מקבל הודעה מיד, והבקשה חוזרת להיות פתוחה.</p></details>
+      <details class="faq-q"><summary>הנהג צריך לסטות מהדרך?</summary><p>הנהג רואה בדיוק כמה דקות זה מוסיף לו, ומחליט. לפעמים האפליקציה מציעה נקודת מפגש קרובה, בטרמפיאדה או בתחנה, כדי שהנהג לא יצטרך לסטות בכלל.</p></details>
+      <details class="faq-q"><summary>צריך להוריד מחנות אפליקציות?</summary><p>לא. On My Way נפתחת ישר בדפדפן, באנדרואיד ובאייפון, ואפשר להוסיף אותה למסך הבית כמו כל אפליקציה.</p></details>
+      <details class="faq-q"><summary>מאיזה גיל אפשר?</summary><p>מגיל 18 ומעלה, גם לנהגים וגם לנוסעים.</p></details>
+      <details class="faq-q"><summary>למה עוד אין נהגים באזור שלי?</summary><p>האפליקציה חדשה. נהגים ונוסעים צריכים להיות באותו אזור, ולכן כל חבר שמצטרף מקרב טרמפ. אפשר לשלוח את הקישור בוואטסאפ.</p></details>
+    </div>
+  </section>
 </main>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "כמה זה עולה?", "acceptedAnswer": {"@type": "Answer", "text": "האפליקציה חינם. הנהג מחליט מראש אם הנסיעה חינם או שהוא מבקש השתתפות בהוצאות, ורואים את זה לפני שמבקשים. לפי החוק אפשר לבקש עד 2 ₪ לק״מ. הכסף, אם יש, עובר ביניכם ולא דרך האפליקציה."}}, {"@type": "Question", "name": "מי רואה את הפרטים שלי?", "acceptedAnswer": {"@type": "Answer", "text": "רואים את השם שבחרתם, תמונה אם הוספתם, דירוג, ומאיפה ולאן אתם צריכים טרמפ. מספר טלפון, מייל ותאריך לידה לא מוצגים לאף אחד. ואתם בוחרים מי רואה את הבקשה: כל מי שבדרך, רק חברים, או גם חברים של חברים."}}, {"@type": "Question", "name": "איך אני יודע/ת עם מי אני נוסע/ת?", "acceptedAnswer": {"@type": "Answer", "text": "לפני שמאשרים רואים שם, תמונה, דירוג וביקורות של מי שכבר נסע איתו. הנסיעה מתחילה רק כשהנהג מקליד את הקוד האישי של הנוסע, ובזמן הנסיעה אפשר לשתף אותה ויש כפתור SOS. עוד אין אימות של תעודת זהות, ונוסיף אותו בהמשך."}}, {"@type": "Question", "name": "ומה אם אני לא יכול/ה להגיע?", "acceptedAnswer": {"@type": "Answer", "text": "לפני האיסוף האפליקציה שואלת את שני הצדדים \"עדיין מגיע/ה?\", ואפשר לבטל בלחיצה. הצד השני מקבל הודעה מיד, והבקשה חוזרת להיות פתוחה."}}, {"@type": "Question", "name": "הנהג צריך לסטות מהדרך?", "acceptedAnswer": {"@type": "Answer", "text": "הנהג רואה בדיוק כמה דקות זה מוסיף לו, ומחליט. לפעמים האפליקציה מציעה נקודת מפגש קרובה, בטרמפיאדה או בתחנה, כדי שהנהג לא יצטרך לסטות בכלל."}}, {"@type": "Question", "name": "צריך להוריד מחנות אפליקציות?", "acceptedAnswer": {"@type": "Answer", "text": "לא. On My Way נפתחת ישר בדפדפן, באנדרואיד ובאייפון, ואפשר להוסיף אותה למסך הבית כמו כל אפליקציה."}}, {"@type": "Question", "name": "מאיזה גיל אפשר?", "acceptedAnswer": {"@type": "Answer", "text": "מגיל 18 ומעלה, גם לנהגים וגם לנוסעים."}}, {"@type": "Question", "name": "למה עוד אין נהגים באזור שלי?", "acceptedAnswer": {"@type": "Answer", "text": "האפליקציה חדשה. נהגים ונוסעים צריכים להיות באותו אזור, ולכן כל חבר שמצטרף מקרב טרמפ. אפשר לשלוח את הקישור בוואטסאפ."}}]}</script>
 
 <div class="dock" id="dock">
   <a class="cta" href="https://onmyway.co.il/app/" data-download data-src="dock">
