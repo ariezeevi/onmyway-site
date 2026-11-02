@@ -23,7 +23,7 @@
 <main class="doc" id="top">
 <p class="draft"><strong>טיוטה.</strong> המסמך נכתב לפי מה שהאפליקציה עושה בפועל, אבל עדיין לא נבדק על ידי עורך דין. הוא יוחלף בנוסח משפטי לפני ההשקה לציבור.</p>
 <h1>מדיניות פרטיות</h1>
-<p class="meta">עודכן לאחרונה: 25.10.2026</p>
+<p class="meta">עודכן לאחרונה: 2.11.2026</p>
 <p class="lead">On My Way מחברת בין נהגים שכבר נוסעים לבין אנשים שצריכים להגיע לאותו כיוון. כדי שזה יעבוד אנחנו שומרים מעט מידע, ופה כתוב בדיוק איזה, למה, וכמה זמן.</p>
 
 <section><h2>מי אנחנו</h2>
@@ -38,7 +38,7 @@
 <li><strong>אמון ובטיחות:</strong> דירוגים וביקורות, חברים, חסימות ודיווחים.</li>
 <li><strong>נסיעות מתוכננות ונקודות:</strong> נסיעות קבועות שהגדרת, ונקודות איסוף שהוספת למפה.</li>
 <li><strong>התראות:</strong> מזהה המכשיר או הדפדפן שמאפשר לשלוח לך התראות, רק אם הפעלת אותן.</li>
-<li><strong>יומן שימוש ושגיאות:</strong> איזה מסכים נפתחים, קריסות, סוג המכשיר וגרסת האפליקציה. אין בו תוכן של הודעות. נועד לתקן תקלות ולהבין איפה אנשים נתקעים.</li>
+<li><strong>שימוש ותקלות:</strong> אילו מסכים נפתחים, על מה לוחצים, קריסות ושגיאות, סוג המכשיר וגרסת האפליקציה, והקלטה של השימוש (כמו סרטון של המסך). כל זה נועד רק כדי לתקן תקלות ולהבין איפה אנשים נתקעים. בהקלטה כל הטקסט מוסתר, כולל הודעות, שמות וכתובות, והמפות לא מוקלטות. <strong>אנחנו לא רואים בכלי הזה מאיפה ולאן אתה נוסע.</strong></li>
 <li><strong>משוב:</strong> מה שתכתוב לנו דרך "שלח משוב".</li>
 </ul></section>
 
@@ -54,6 +54,7 @@
 <ul>
 <li><strong>משתמשים אחרים</strong> רואים את השם הפרטי, התמונה, הדירוג, הביקורות והנסיעות המשותפות איתך. הם לא רואים תאריך לידה.</li>
 <li><strong>Supabase</strong> (שרתים באיחוד האירופי): אחסון הנתונים והתחברות.</li>
+<li><strong>PostHog</strong> (שרתים באיחוד האירופי): נתוני השימוש וההקלטות שמתוארים למעלה, עם המזהה האקראי של החשבון שלך (לא שם, לא טלפון ולא מייל). כתובת ה־IP לא נשמרת שם.</li>
 <li><strong>Mapbox ו־Google Maps:</strong> חישוב מסלולים והשלמת כתובות. נשלחים אליהם נקודות מסלול וטקסט חיפוש, בלי שם, דרך השרת שלנו.</li>
 <li><strong>OpenFreeMap ו־OpenStreetMap:</strong> תמונות המפה. הדפדפן שלך פונה אליהם ישירות, ולכן הם רואים כתובת IP.</li>
 <li><strong>Expo, Google ואפל:</strong> שליחת התראות למכשירים.</li>
@@ -64,7 +65,7 @@
 <section><h2>כמה זמן אנחנו שומרים</h2>
 <ul>
 <li>אחרי 30 יום, מיקומים מדויקים של נסיעות ישנות מעוגלים לכ־ק״מ, והמסלולים והמיקומים ששותפו בשיחה נמחקים.</li>
-<li>יומן שימוש ושגיאות נמחק אחרי 90 יום.</li>
+<li>יומן השגיאות שלנו נמחק אחרי 90 יום. הקלטות השימוש ב־PostHog נמחקות אחרי 30 יום, ושאר נתוני השימוש שם נשמרים עד שנה.</li>
 <li>שאר המידע נשמר כל עוד החשבון קיים.</li>
 </ul></section>
 
@@ -76,7 +77,8 @@
 <li><strong>מחיקה:</strong> באפליקציה, פרופיל ← מחיקת חשבון. החשבון והמידע האישי שלך נמחקים. הודעות שכבר נשלחו נשארות אצל הצד השני, בלי שם השולח.</li>
 <li><strong>עיון, תיקון והעברה:</strong> אפשר לבקש במייל: <a href="mailto:support@onmyway.co.il">support@onmyway.co.il</a>. נענה בהקדם.</li>
 <li><strong>התראות והרשאות:</strong> אפשר לבטל בכל רגע בהגדרות הדפדפן או הטלפון.</li>
-</ul></section>
+</ul>
+<p>כשאתה מוחק את החשבון, אפשר גם לבקש מאיתנו למחוק את נתוני השימוש שלך ב־PostHog.</p></section>
 
 <section><h2>אבטחה</h2>
 <p>המידע מוצפן בתעבורה, והגישה אליו מוגבלת בכללים בבסיס הנתונים. אין מערכת בטוחה לחלוטין, ואנחנו משפרים את ההגנות כל הזמן. אם נתקלת בפרצה, כתוב לנו.</p></section>
@@ -85,7 +87,7 @@
 <p>כשהמדיניות תשתנה בצורה מהותית נעדכן את התאריך למעלה, ואם צריך נודיע גם באפליקציה.</p></section>
 
 <section class="en" lang="en" dir="ltr"><h2>Privacy, in short</h2>
-<p>We store: first name, an optional photo, a private date of birth (used only to check you are 18 or older), trips and requests, matches and chat messages, ratings, friends, planned trips, notification tokens, and a usage and error log. Location is read only when you ask and during a ride you agreed to; it is not stored except what you share in a chat, and a driver's live position before pickup, which is deleted once the ride starts or is cancelled. After 30 days exact ride locations are rounded to about 1 km and routes are deleted; the usage log is deleted after 90 days. Processors: Supabase (EU), Mapbox, Google Maps, OpenFreeMap, push services, GitHub Pages and Cloudflare. We do not sell data and show no ads. Delete your account in the app (Profile, Delete account). 18+ only. Contact: <a href="mailto:support@onmyway.co.il">support@onmyway.co.il</a>.</p></section>
+<p>We store: first name, an optional photo, a private date of birth (used only to check you are 18 or older), trips and requests, matches and chat messages, ratings, friends, planned trips, notification tokens, and a usage and error log, including screen recordings in which all text is hidden and maps are not recorded. Location is read only when you ask and during a ride you agreed to; it is not stored except what you share in a chat, and a driver's live position before pickup, which is deleted once the ride starts or is cancelled. After 30 days exact ride locations are rounded to about 1 km and routes are deleted; the usage log is deleted after 90 days. Processors: Supabase (EU), PostHog (EU, usage data and recordings; recordings deleted after 30 days, other usage data after a year), Mapbox, Google Maps, OpenFreeMap, push services, GitHub Pages and Cloudflare. We do not sell data and show no ads. Delete your account in the app (Profile, Delete account). 18+ only. Contact: <a href="mailto:support@onmyway.co.il">support@onmyway.co.il</a>.</p></section>
 </main>
 <footer class="foot">
   <a class="brand brand--foot" href="./"><img src="logo.svg" alt="" width="18" height="24"><span dir="ltr">On My Way</span></a>
@@ -99,6 +101,7 @@
   <button type="button" class="calm-btn" id="calm">עצור אנימציות</button>
 </div>
 </footer>
+<script defer src="/ph.js"></script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a829412200fb453aa680180038b7f3cb"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

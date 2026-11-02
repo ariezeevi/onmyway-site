@@ -42,7 +42,7 @@
 <nav class="crumbs" aria-label="פירורי לחם"><ol><li><a href="./">דף הבית</a></li><li><span aria-current="page">מדיניות עוגיות ואחסון בדפדפן</span></li></ol></nav>
 <p class="draft"><strong>טיוטה.</strong> המסמך נכתב לפי מה שהאתר והאפליקציה עושים בפועל (נבדק ב־26.10.2026), אבל עדיין לא נבדק על ידי עורך דין ואין בו ייעוץ משפטי.</p>
 <h1>מדיניות עוגיות ואחסון בדפדפן</h1>
-<p class="meta">עודכן לאחרונה: 26.10.2026</p>
+<p class="meta">עודכן לאחרונה: 2.11.2026</p>
 <p class="lead">בקצרה: אנחנו <strong>לא משתמשים בעוגיות פרסום ולא עוקבים אחרי אנשים</strong>. האתר לא מציב עוגיות בכלל. מה שכן נשמר בדפדפן שלך נועד רק שהשירות יעבוד, ולכן אין צורך באישור שלך ואין באנר עוגיות.</p>
 
 <section><h2>מה זו עוגייה ומה זה אחסון מקומי</h2>
@@ -53,7 +53,7 @@
 <li><strong>עוגיות:</strong> אין. בדקנו את התגובות של האתר החי ואין בהן הצבת עוגיות.</li>
 <li><strong>אחסון מקומי:</strong> פריט אחד בשם <span dir="ltr">omw.calm</span>. הוא נשמר רק אם לחצת על "עצור אנימציות", כדי לזכור את הבחירה שלך בביקור הבא. הוא לא נשלח אלינו ואין בו מידע אישי.</li>
 <li><strong>גופנים:</strong> מאוחסנים באתר עצמו. הדפדפן לא פונה ל־Google Fonts או לשירות גופנים אחר.</li>
-<li><strong>ספירת כניסות:</strong> אנחנו סופרים כמה אנשים נכנסים לאתר בעזרת Cloudflare Web Analytics. הכלי לא מציב עוגיות, לא שומר ולא קורא שום דבר בדפדפן שלך ולא עוקב אחריך בין אתרים. Cloudflare רואה כתובת IP וסוג דפדפן, כמו כל שרת, ואנחנו מקבלים ממנו רק מספרים כוללים (כמה כניסות, מאיזו מדינה, מאיזה סוג מכשיר).</li>
+<li><strong>ספירת כניסות ושימוש:</strong> אנחנו סופרים כניסות בעזרת Cloudflare Web Analytics (בלי שום דבר בדפדפן שלך), ובנוסף משתמשים ב־PostHog כדי לראות איך משתמשים באתר: אילו עמודים נפתחים, על מה לוחצים, והקלטה של הגלישה (כמו סרטון של המסך) כדי לתקן תקלות. שדות שאתה מקליד בהם מוסתרים בהקלטה. לשם כך נשמר בדפדפן מזהה אקראי באחסון המקומי (<span dir="ltr">ph_…_posthog</span>), לא עוגייה.</li>
 <li><strong>פיקסלים ורשתות חברתיות:</strong> אין. לא Google Analytics, לא פיקסל של פייסבוק או טיקטוק, לא כפתורי שיתוף ולא סרטונים או מפות מוטמעים.</li>
 <li><strong>אירוח:</strong> האתר מאוחסן ב־GitHub Pages. כמו בכל שרת, כתובת ה־IP שלך וסוג הדפדפן מופיעים ביומן השרת של המארח לצורך אבטחה ותפעול. אין לנו גישה אליהם.</li>
 </ul></section>
@@ -66,8 +66,9 @@
 <li><strong>מטמון קבצים (Service Worker):</strong> שמירה של קוד האפליקציה במכשיר כדי שתיפתח מהר.</li>
 <li><strong>התראות:</strong> רק אם אישרת בחלון של הדפדפן, נשמר מזהה הרשמה שמאפשר לשלוח לך התראות. אפשר לבטל בהגדרות הדפדפן בכל רגע.</li>
 <li><strong>מיקום:</strong> נשאל רק כשאתה לוחץ על פעולה שצריכה אותו, באישור של הדפדפן.</li>
+<li><strong>תיקון תקלות ושיפור (PostHog):</strong> כדי למצוא תקלות ולעזור לך כשמשהו לא עובד, אנחנו רואים אילו מסכים נפתחים, על מה לוחצים ואיפה האפליקציה נתקעת, ושומרים הקלטה של השימוש. <strong>בהקלטה כל הטקסט מוסתר</strong> (הודעות, שמות, כתובות) <strong>והמפות מוחלפות במלבן אפור</strong>, ולכן אי אפשר לראות ממנה מאיפה ולאן אתה נוסע. אנחנו גם לא שולחים לשם מקומות או כתובות. נשמר בדפדפן מזהה אקראי באחסון המקומי (<span dir="ltr">ph_…_posthog</span>), לא עוגייה.</li>
 </ul>
-<p>האחסון הזה נחוץ לתפעול שביקשת, ולכן אינו תלוי בהסכמה נפרדת. אם תמחק אותו, תתנתק ותצטרך לחזור ולהגדיר העדפות.</p></section>
+<p>רוב האחסון הזה נחוץ כדי שהאפליקציה תעבוד. המזהה של PostHog משמש רק למדידה ולתיקון תקלות. אם תמחק את האחסון, תתנתק ותצטרך לחזור ולהגדיר העדפות.</p></section>
 
 <section><h2>בקשות שהדפדפן שולח לגורמים אחרים</h2>
 <p>כשמפה נטענת באפליקציה, הדפדפן פונה ישירות לשרתים של גורמים אחרים, והם רואים כתובת IP וסוג דפדפן. הם לא מקבלים שם או חשבון:</p>
@@ -75,11 +76,13 @@
 <li><strong>unpkg.com:</strong> קוד ספריות המפה (MapLibre, Leaflet).</li>
 <li><strong>OpenFreeMap ו־OpenStreetMap:</strong> אריחי המפה.</li>
 <li><strong>Amazon S3 (נתוני גובה פתוחים):</strong> תמונות גובה לתצוגת תלת־ממד של הפסגות והעמקים.</li>
+<li><strong>PostHog (<span dir="ltr">eu.i.posthog.com</span>, שרתים באיחוד האירופי):</strong> נתוני שימוש והקלטות כפי שמתואר למעלה.</li>
 </ul>
-<p>אנחנו לא משתמשים בשירותים האלה לפרסום או למעקב. פרטים נוספים ב<a href="privacy.html">מדיניות הפרטיות</a>.</p></section>
+<p>אנחנו לא משתמשים באף אחד מהשירותים האלה לפרסום, ולא עוקבים אחריך באתרים אחרים. פרטים נוספים ב<a href="privacy.html">מדיניות הפרטיות</a>.</p></section>
 
-<section><h2>האם צריך אישור עוגיות?</h2>
-<p>בישראל אין חוק ייעודי לאישור עוגיות, אבל חוק הגנת הפרטיות מחייב לומר מה נאסף ולמה, וזה כתוב כאן ובמדיניות הפרטיות. באיחוד האירופי חל כלל שונה: אחסון שאינו נחוץ לשירות מחייב הסכמה מראש, ואחסון הכרחי פטור ממנה. מכיוון שאנחנו משתמשים רק באחסון הכרחי, אין לנו באנר הסכמה. ספירת הכניסות של Cloudflare לא שומרת ולא קוראת דבר בדפדפן, ולכן גם היא לא דורשת הסכמה. <strong>אם נוסיף פרסום, מעקב או כל דבר שנשמר בדפדפן מעבר למה שהשירות צריך, נבקש הסכמה מראש ונעדכן מסמך זה לפני שהוא יופעל.</strong></p></section>
+<section><h2>למה אין באנר הסכמה?</h2>
+<p>האתר לא מציב עוגיות. מה שנשמר בדפדפן הוא מה שהשירות צריך, ומזהה אחד של PostHog שמשמש אותנו רק כדי לראות איך משתמשים באתר ובאפליקציה ולתקן תקלות. <strong>אנחנו לא משתמשים בזה לפרסום, לא מוכרים מידע, לא עוקבים אחריך באתרים אחרים ולא מסתכלים מאיפה ולאן אתה נוסע.</strong> חוק הגנת הפרטיות בישראל מחייב לומר מה נאסף ולמה, וזה כתוב כאן ובמדיניות הפרטיות.</p>
+<p>לא רוצה שהשימוש שלך יימדד? אפשר לחסום את <span dir="ltr">eu.i.posthog.com</span> בחוסם פרסומות, והאתר והאפליקציה ימשיכו לעבוד כרגיל. אפשר גם לכתוב לנו ל־<a href="mailto:support@onmyway.co.il">support@onmyway.co.il</a> ונמחק את נתוני השימוש שלך.</p></section>
 
 <section><h2>איך למחוק או לחסום</h2>
 <ul>
@@ -92,7 +95,7 @@
 <p><a href="privacy.html">מדיניות פרטיות</a> · <a href="terms.html">תנאי שימוש</a> · <a href="refunds.html">החזרים וביטולים</a> · <a href="contact.html">יצירת קשר</a></p></section>
 
 <section class="en" lang="en" dir="ltr"><h2>Cookies, in short</h2>
-<p>The website sets no cookies. It counts visits with Cloudflare Web Analytics, which stores and reads nothing in your browser, does not track you across sites and gives us only totals. It has no advertising pixels, social embeds or third-party fonts. It stores one optional item in your browser, <span dir="ltr">omw.calm</span> (your "stop animations" choice). The web app uses browser storage and a file cache, not cookies, only to keep you signed in and remember preferences. Map pages load map code and tiles from unpkg.com, OpenFreeMap, OpenStreetMap and Amazon S3, which see your IP address. Because we use only storage strictly necessary for the service, there is no cookie banner; if we ever add advertising, tracking or anything stored in your browser beyond what the service needs, we will ask for consent first. Contact: <a href="mailto:support@onmyway.co.il">support@onmyway.co.il</a>.</p></section>
+<p>The website sets no cookies. It counts visits with Cloudflare Web Analytics (nothing stored in your browser) and uses PostHog (EU servers) to see how the site and the web app are used and to fix bugs: pages and screens opened, taps, and a screen recording. In the app's recordings all text is hidden and maps are replaced by a grey box, so they never show where you travel from or to; we do not send places or addresses to PostHog. PostHog keeps one random ID in local storage (<span dir="ltr">ph_…_posthog</span>), not a cookie. No advertising, no cross-site tracking, no selling of data. To opt out, block <span dir="ltr">eu.i.posthog.com</span> with an ad blocker or write to <a href="mailto:support@onmyway.co.il">support@onmyway.co.il</a> and we will delete your usage data. Map pages load map code and tiles from unpkg.com, OpenFreeMap, OpenStreetMap and Amazon S3, which see your IP address.</p></section>
 </main>
 <footer class="foot">
   <a class="brand brand--foot" href="./"><img src="logo.svg" alt="" width="18" height="24"><span dir="ltr">On My Way</span></a>
@@ -108,6 +111,7 @@
   <button type="button" class="calm-btn" id="calm">עצור אנימציות</button>
 </div>
 </footer>
+<script defer src="/ph.js"></script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a829412200fb453aa680180038b7f3cb"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
