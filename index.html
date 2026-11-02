@@ -31,11 +31,13 @@
 <link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preload" href="fonts/Heebo_800ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="home.css?v=20261102d">
+<link rel="stylesheet" href="home.css?v=20261103a">
 <link rel="stylesheet" href="screens.css">
+<link rel="stylesheet" href="story.css?v=20261103a">
 <script>document.documentElement.classList.add('js')</script>
 <script src="a11y.js"></script>
 <script src="menu.js" defer></script>
+<script src="story.js?v=20261103a" defer></script>
 </head>
 <body>
 <a class="skip" href="#top">דלג לתוכן</a>
@@ -126,17 +128,35 @@
     </div>
   </section>
 
-  <section class="explain" id="how" aria-labelledby="how-h">
-    <div class="how glass">
+  <section class="story" id="how" aria-labelledby="how-h">
+    <div class="story-head">
       <h2 id="how-h">איך זה עובד</h2>
-      <ol class="steps">
-        <li><span class="step-n" aria-hidden="true">1</span><div><h3>כותבים לאן</h3><p><b class="t-driver">נהג</b>: לאן הוא נוסע ומתי. <b class="t-rider">מי שצריך טרמפ</b>: מאיפה, לאן ומתי.</p></div></li>
-        <li><span class="step-n" aria-hidden="true">2</span><div><h3>האפליקציה מחברת</h3><p>מי שצריך טרמפ רואה נהגים שנוסעים בדיוק בכיוון שלו, ומתי הם עוברים.</p></div></li>
-        <li><span class="step-n" aria-hidden="true">3</span><div><h3>מבקשים ומאשרים</h3><p>שולחים בקשה להצטרף. <b>שום דבר לא נסגר בלי שהצד השני מאשר.</b> אחרי האישור מתכתבים בצ׳אט.</p></div></li>
-        <li><span class="step-n" aria-hidden="true">4</span><div><h3>נפגשים ונוסעים</h3><p>בנקודה שסיכמתם. הנהג מקליד את הקוד האישי של הנוסע, ויוצאים לדרך.</p></div></li>
-      </ol>
+      <p class="story-hint" aria-hidden="true">גללו, והסיפור יתקדם</p>
     </div>
 
+    <!-- Live version: the scroll drives the frames (story.js). Without JS, with reduced motion or the calm switch, the list below shows instead. -->
+    <div class="story-track" aria-hidden="true">
+      <div class="story-stage">
+        <canvas class="story-canvas"></canvas>
+        <img class="story-onscreen" alt="" decoding="async">
+        <div class="story-side">
+          <div class="story-phone"><img alt="" decoding="async"></div>
+          <div class="story-cap glass"><span class="story-n"></span><p></p></div>
+        </div>
+        <div class="story-bar"><span></span></div>
+      </div>
+    </div>
+
+    <ol class="story-steps">
+      <li data-step="0" data-screen="shots/home.jpg"><figure><img src="story/f1/001.webp" width="960" height="540" alt="נהג ברכב, הטלפון שלו על הלוח" loading="lazy" decoding="async"></figure><div><span class="story-who story-who--driver">🚗 הנהג</span><h3>כותב לאן הוא נוסע. זהו.</h3><p>לוחץ "מצא נוסעים בדרך" ונוסע. <b>לא צריך למלא טפסים</b> ולא לחפש אף אחד.</p></div></li>
+      <li data-step="1" data-screen="screens/results.webp"><figure><img src="story/f2/001.webp" width="960" height="540" alt="טרמפיסט בטרמפיאדה מראה את הטלפון שלו" loading="lazy" decoding="async"></figure><div><span class="story-who story-who--rider">🙋 הטרמפיסט</span><h3>רואה מי נוסע לכיוון שלו, ומתי.</h3><p>בוחר נהג <b>לפי שם, תמונה ודירוג</b>, ושולח בקשה להצטרף.</p></div></li>
+      <li data-step="2" data-screen="shots/request.jpg"><figure><img src="story/f2/001.webp" width="960" height="540" alt="" loading="lazy" decoding="async"></figure><div><span class="story-who story-who--driver">🚗 הנהג</span><h3>מקבל בקשה, ורואה כמה זה מוסיף לו.</h3><p>"+3 דק׳". מאשר בלחיצה, או לא. <b>שום דבר לא נסגר בלי אישור.</b></p></div></li>
+      <li data-step="3" data-screen="shots/chat.jpg"><figure><img src="story/f2/050.webp" width="960" height="540" alt="הרכב הכחול עוצר בטרמפיאדה והנהג מנופף" loading="lazy" decoding="async"></figure><div><span class="story-who">💬 שניהם</span><h3>קובעים איפה ומתי, ומתאמים בצ׳אט.</h3><p>הנהג עוצר <b>בטרמפיאדה או בתחנה</b>, לא באמצע הכביש.</p></div></li>
+      <li data-step="4" data-screen="shots/ride.jpg"><figure><img src="story/k4.webp" width="1280" height="720" alt="הטרמפיסט והנהג יושבים ברכב ומחייכים" loading="lazy" decoding="async"></figure><div><span class="story-who">🔢 יוצאים לדרך</span><h3>הנוסע מראה קוד אישי, ונוסעים.</h3><p>הנסיעה מתחילה רק עם <b>הקוד של הנוסע</b>. יש שיתוף נסיעה וכפתור SOS.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="explain" aria-label="פרטיות">
     <div class="seen glass" id="seen" aria-labelledby="seen-h">
       <h2 id="seen-h">מה אחרים רואים עליכם?</h2>
       <div class="seen-cols">

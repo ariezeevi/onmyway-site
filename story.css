@@ -1,0 +1,60 @@
+/* "How it works" scroll story (story.js). The list is the default; the stage replaces it when live. */
+.story{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:16px var(--gutter) 40px}
+.story-head{text-align:center;margin-bottom:18px}
+.story-head h2{font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.15}
+.story-hint{display:none;margin-top:6px;color:var(--ink-soft);font-size:1rem}
+
+/* Plain list: no JS, reduced motion, the calm switch */
+.story-steps{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.story-steps li{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:20px;align-items:center;padding:14px;border-radius:24px;
+  background:rgba(255,255,255,.66);border:1px solid rgba(15,23,42,.06)}
+.story-steps figure{margin:0;border-radius:16px;overflow:hidden;aspect-ratio:16/9;background:#E9EEF6}
+.story-steps figure img{display:block;width:100%;height:100%;object-fit:cover}
+.story-steps h3{margin:6px 0 0;font-size:1.25rem;line-height:1.3}
+.story-steps p{margin-top:6px;color:var(--ink-soft);font-size:1.0625rem;line-height:1.55}
+.story-steps b{color:var(--ink);font-weight:700}
+.story-who{display:inline-block;font-weight:700;font-size:.9375rem;color:var(--ink-soft)}
+.story-who--driver{color:var(--blue-deep)}
+.story-who--rider{color:var(--orange-text)}
+@media (max-width:759px){.story-steps li{grid-template-columns:1fr;gap:10px}}
+
+/* Live: a tall track, the stage sticks while the scroll plays the story */
+.story-track{display:none}
+.story--live .story-track{display:block;height:640vh;margin:0 calc(-1 * var(--gutter))}
+.story--live .story-steps{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.story--live .story-hint{display:block}
+.story-stage{position:sticky;top:0;height:100svh;overflow:hidden;border-radius:0;background:#E9D9C4}
+.story-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.story-onscreen{position:absolute;top:0;left:0;transform-origin:0 0;pointer-events:none;opacity:0;border-radius:18px;will-change:transform,opacity}
+
+.story-side{position:absolute;bottom:clamp(20px,4svh,40px);width:min(340px,30vw);display:grid;gap:14px;justify-items:center;
+  transition:opacity .25s var(--ease),inset .5s var(--ease)}
+.story-side[data-side="r"]{right:clamp(16px,3vw,48px);left:auto}
+.story-side[data-side="l"]{left:clamp(16px,3vw,48px);right:auto}
+.story-side.is-swapping .story-phone{opacity:.0;transform:translateY(8px) scale(.98)}
+.story-phone{width:min(210px,16vw,calc((100svh - 330px) * .46));aspect-ratio:600/1298;border-radius:30px;padding:7px;background:#0F172A;
+  box-shadow:0 30px 60px -24px rgba(15,23,42,.55),0 0 0 1px rgba(255,255,255,.12) inset;transition:opacity .16s,transform .3s var(--ease)}
+.story-phone img{display:block;width:100%;height:100%;object-fit:cover;object-position:top;border-radius:24px;background:#fff}
+.story-cap{border-radius:22px;padding:16px 18px;width:100%}
+.story-n{display:block;font-size:.875rem;font-weight:700;color:var(--ink-soft)}
+.story-cap p{margin-top:4px;font-size:1.0625rem;line-height:1.5;color:var(--ink-soft)}
+.story-cap .story-title{display:block;font-size:1.25rem;line-height:1.3;color:var(--ink);margin-bottom:4px}
+.story-cap b{color:var(--ink);font-weight:700}
+.story-cap.is-in{animation:storyIn .45s var(--ease)}
+@keyframes storyIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.story-bar{position:absolute;left:0;right:0;bottom:0;height:4px;background:rgba(255,255,255,.35)}
+.story-bar span{display:block;height:100%;background:linear-gradient(90deg,var(--orange),var(--blue));transform-origin:100% 50%;transform:scaleX(0)}
+
+/* Phones: the scene on top, the card under it */
+@media (max-width:759px){
+  .story-canvas{height:58%}
+  .story-on .dock{transform:translateY(130%);opacity:0;pointer-events:none}
+  .story-stage{background:var(--canvas)}
+  .story-side{top:calc(58% + 12px);bottom:auto;left:12px!important;right:12px!important;width:auto;
+    grid-template-columns:auto 1fr;align-items:end;justify-items:stretch;gap:10px}
+  .story-phone{width:min(29vw,124px,calc((42svh - 40px) * .46));border-radius:20px;padding:5px}
+  .story-phone img{border-radius:16px}
+  .story-cap{padding:12px 14px;border-radius:18px}
+  .story-cap .story-title{font-size:1.0625rem}
+  .story-cap p{font-size:.9375rem;line-height:1.45}
+}
