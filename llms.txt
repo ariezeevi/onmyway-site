@@ -16,4 +16,4 @@
 - [Cookies and browser storage](https://onmyway.co.il/cookies.html)
 - [Refunds and cancellations](https://onmyway.co.il/refunds.html)
 - [Accessibility statement](https://onmyway.co.il/accessibility.html)
-- [Contact](https://onmyway.co.il/contact.html): arie@onmyway.co.il
+- [Contact](https://onmyway.co.il/contact.html): support@onmyway.co.il
