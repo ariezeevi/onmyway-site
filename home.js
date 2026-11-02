@@ -22,8 +22,6 @@
   }));
   const WEATHER = ['heat', 'cold', 'rain', 'hail', 'pass'];
   const heroMark = document.querySelector('.mark');
-  const bar = document.getElementById('bar');
-  const barCta = bar.querySelector('.cta');
 
   const HEAD = 0.56; // the reading line, as a share of the viewport height
   let W = 0, vh = 0, jTop = 0, total = 0, mobile = false;
@@ -268,12 +266,14 @@
   }, { rootMargin: '0px 0px -12% 0px', threshold: .15 });
   document.querySelectorAll('.reveal').forEach((n) => io.observe(n));
 
-  // The bar's button shows once the hero button has gone
-  new IntersectionObserver(([e]) => {
-    const show = !e.isIntersecting && e.boundingClientRect.top < 0;
-    bar.classList.toggle('show-cta', show);
-    barCta.tabIndex = show ? 0 : -1;
-  }).observe(document.getElementById('hero-cta'));
+  // Phone: the bottom button stays on screen, except while another open-the-app button is in view
+  const dock = document.getElementById('dock');
+  const inView = new Set();
+  const dockIo = new IntersectionObserver((entries) => {
+    entries.forEach((e) => (e.isIntersecting ? inView.add(e.target) : inView.delete(e.target)));
+    dock?.classList.toggle('is-away', inView.size > 0);
+  });
+  document.querySelectorAll('#hero-cta, #end-cta').forEach((n) => dockIo.observe(n));
 
   let rz;
   const relayout = () => { clearTimeout(rz); rz = setTimeout(layout, 120); };
@@ -362,23 +362,4 @@
   }
   // wait until the road has finished drawing, and keep off hidden tabs
   requestAnimationFrame(frame);
-})();
-
-// Install guidance: tell people where they are and what to do next.
-(() => {
-  const ua = navigator.userAgent || '';
-  const inApp = /Instagram|FBAN|FBAV|FB_IAB|FBIOS|TikTok|musical_ly|Line\//i.test(ua);
-  const ios = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-  const android = /Android/i.test(ua);
-  const banner = document.getElementById('inapp');
-  if (inApp && banner) {
-    banner.hidden = false;
-    const copy = document.getElementById('inapp-copy');
-    copy?.addEventListener('click', async () => {
-      try { await navigator.clipboard.writeText(location.href); copy.textContent = 'הועתק ✓'; }
-      catch { copy.textContent = 'לחץ והחזק על הכתובת'; }
-    });
-    document.getElementById('inapp-x')?.addEventListener('click', () => { banner.hidden = true; });
-    return;
-  }
 })();

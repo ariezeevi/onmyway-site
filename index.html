@@ -45,13 +45,17 @@
     <img src="logo.svg" alt="" width="22" height="30">
     <span dir="ltr">On My Way</span>
   </a>
-  <!-- Download hook: every element with data-download is a download button. See HOOKS.md -->
-  <a class="cta cta--sm" href="https://onmyway.co.il/app/" data-download tabindex="-1">הורד את האפליקציה</a>
+  <!-- Download hook: every element with data-download opens the app (get.js). data-src says which button, for counting. -->
+  <a class="cta cta--sm" href="https://onmyway.co.il/app/" data-download data-src="bar">פתח את האפליקציה · חינם</a>
 </header>
 
 <div class="inapp glass" id="inapp" role="status" hidden>
-  <p><strong>אתה בתוך הדפדפן של האפליקציה שממנה הגעת.</strong> כדי להתקין, פתח את הדף בדפדפן רגיל: לחץ על <span dir="ltr">⋯</span> ובחר ״פתח בדפדפן״.</p>
-  <div class="inapp-actions"><button type="button" class="inapp-copy" id="inapp-copy">העתק קישור</button><button type="button" class="inapp-x" id="inapp-x" aria-label="סגור">✕</button></div>
+  <p><strong>הדף נפתח בתוך אינסטגרם (או אפליקציה אחרת).</strong> כדי להתקין את On My Way צריך לפתוח אותו בדפדפן רגיל.</p>
+  <div class="inapp-actions">
+    <a class="inapp-open" id="inapp-open" href="https://onmyway.co.il/app/">פתח בדפדפן</a>
+    <button type="button" class="inapp-copy" id="inapp-copy">העתק קישור</button>
+    <button type="button" class="inapp-x" id="inapp-x" aria-label="סגור">✕</button>
+  </div>
 </div>
 
 <main id="top">
@@ -59,16 +63,16 @@
   <section class="hero">
     <div class="hero-copy">
       <h1><span>גם ככה אתה נוסע.</span> <span class="accent">קח מישהו בדרך.</span></h1>
-      <p class="lede">On My Way מחברת בין מי שכבר נוסע למי שצריך להגיע לאותו כיוון.</p>
+      <p class="lede">On My Way מחברת בין מי שכבר נוסע לבין מי שצריך להגיע לאותו כיוון.</p>
       <div class="hooks">
-        <p class="hook hook--rider glass"><span class="hook-dot" aria-hidden="true"></span><span><strong>נמאס לחכות שעות לאוטובוס, או לטרמפ שלא עוצר?</strong> רואים מראש מי נוסע לכיוון שלך, ומתי.</span></p>
-        <p class="hook hook--driver glass"><span class="hook-dot" aria-hidden="true"></span><span><strong>יש לך מושב ריק בדרך?</strong> אתה נוסע ממילא. מה אכפת לך לקחת מישהו? מעשה טוב, והשתתפות בדלק.</span></p>
+        <p class="hook hook--rider glass"><span class="hook-dot" aria-hidden="true"></span><span><strong>נמאס לחכות שעות לאוטובוס, או לטרמפ שלא עוצר?</strong> תראו מראש מי נוסע לכיוון שלכם, ומתי.</span></p>
+        <p class="hook hook--driver glass"><span class="hook-dot" aria-hidden="true"></span><span><strong>יש לכם מקום פנוי ברכב?</strong> אתם נוסעים בכל מקרה. תראו מי מחכה בדרך וכמה דקות זה מוסיף לכם, ותחליטו.</span></p>
       </div>
-      <a class="cta" href="https://onmyway.co.il/app/" data-download id="hero-cta">
-        <span class="cta-badge" aria-hidden="true"><svg class="cta-icon" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        הורד את האפליקציה
+      <a class="cta" href="https://onmyway.co.il/app/" data-download data-src="hero" id="hero-cta">
+        <span class="cta-badge" aria-hidden="true"><svg class="cta-icon" viewBox="0 0 24 24"><path d="M5 12h12m0 0-5-5m5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" transform="rotate(180 12 12)"/></svg></span>
+        פתח את האפליקציה · חינם
       </a>
-      <p class="cta-sub">חינם · בלי חנות אפליקציות · מתקינים ישר מהדפדפן</p>
+      <p class="cta-sub">חינם · בלי חנות אפליקציות · נפתח ישר בדפדפן</p>
     </div>
     <div class="hero-mark" aria-hidden="true">
       <svg class="mark" viewBox="100 50 290 390">
@@ -109,6 +113,24 @@
     </div>
   </section>
 
+  <section class="screens" aria-labelledby="screens-h">
+    <h2 id="screens-h">ככה זה נראה באפליקציה</h2>
+    <div class="shots" tabindex="0" aria-label="צילומי מסך מהאפליקציה">
+      <figure class="shot">
+        <div class="phone"><img src="shots/home.jpg" width="390" height="844" alt="מסך הנהג: בוחרים יעד, ובמפה רואים את ירושלים" decoding="async"></div>
+        <figcaption>בוחרים לאן נוסעים. שאר הפרטים כבר ממולאים.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="phone"><img src="shots/request.jpg" width="600" height="1298" alt="בקשה להצטרף: נועה רוצה להצטרף אליך, מוסיף 3 דקות" loading="lazy" decoding="async"></div>
+        <figcaption>נהג מקבל בקשה ורואה כמה דקות זה מוסיף לו.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="phone"><img src="shots/chat.jpg" width="600" height="1298" alt="צ׳אט בין הנהג לנוסעת: היא מחכה בתחנה, הוא מגיע בעוד 7 דקות" loading="lazy" decoding="async"></div>
+        <figcaption>מתאמים בצ׳אט שבתוך האפליקציה, ונפגשים.</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <div class="journey">
     <svg class="road" aria-hidden="true">
       <defs>
@@ -139,109 +161,79 @@
 
     <span class="road-start" aria-hidden="true"></span>
 
-    <!-- 1. Who we are, and everywhere we went without a car -->
-    <section class="stop stop--steps" id="dest" data-road data-side="start" data-steps="5" style="--step:17vh">
-      <div class="sticky">
-        <div class="card card--scene glass reveal">
-          <h2>On My Way נולדה בצד הכביש.</h2>
-          <p>מ־15 שנה של טרמפים ואוטובוסים, לכל מקום בארץ:</p>
-          <div class="stage">
-            <div class="scene" data-scene="school" data-i="0"></div>
-            <div class="scene" data-scene="dorm" data-i="1"></div>
-            <div class="scene" data-scene="trip" data-i="2"></div>
-            <div class="scene" data-scene="army" data-i="3"></div>
-            <div class="scene" data-scene="family" data-i="4"></div>
-          </div>
-          <ul class="signs" aria-label="לאן נסענו">
-            <li data-i="0">בית ספר וחברים</li><li data-i="1">פנימייה ומכינה</li>
-            <li data-i="2">טיולים</li><li data-i="3">צבא</li><li data-i="4">בת זוג, סבא וסבתא, הורים</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2. The bus -->
-    <section class="stop stop--steps" id="bus" data-road data-side="end" data-steps="4" style="--step:20vh">
-      <div class="sticky">
-        <div class="card card--scene glass reveal">
-          <h2>20 דקות ברכב. לפעמים שעה וחצי באוטובוס.</h2>
-          <div class="stage">
-            <div class="scene" data-scene="race" data-i="0"></div>
-            <div class="scene" data-scene="missed" data-i="1"></div>
-            <div class="scene" data-scene="wait" data-i="2"></div>
-            <div class="scene scene--dark" data-scene="night" data-i="3"></div>
-          </div>
-          <ol class="captions">
-            <li data-i="0">זה פשוט לא הגיוני.</li>
-            <li data-i="1">מפספסים את האוטובוס ברגע האחרון.</li>
-            <li data-i="2">ומחכים שעה שלמה לבא.</li>
-            <li data-i="3">ובלילה, כשאין קו: הולכים ברגל. לבד. בחושך.</li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. Waiting for a ride in every weather -->
-    <section class="stop stop--steps" id="weather" data-road data-side="start" data-steps="5" style="--step:11vh">
-      <div class="sticky">
-        <div class="card card--scene glass reveal">
-          <div class="stage stage--single">
-            <div class="scene is-on" data-scene="weather" data-w="heat"></div>
-          </div>
-          <p class="words" aria-label="חום, קור, גשם, ברד">
-            <span data-i="0">חום.</span> <span data-i="1">קור.</span> <span data-i="2">גשם.</span> <span data-i="3">ברד.</span>
-          </p>
-          <h2 class="nobody" data-i="4">ושום טרמפ לא עוצר.</h2>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. A stranger -->
-    <section class="stop" data-road data-side="end" style="--h:78vh">
+    <!-- 1. The problem -->
+    <section class="stop" data-road data-side="start" style="--h:80vh">
       <div class="card card--scene glass reveal">
-        <h2>ואתה לא יודע מי יעצור.</h2>
-        <div class="stage stage--single"><div class="scene is-on" data-scene="stranger"></div></div>
-        <p>מצביעים לרכב שלא מכירים, ומקווים. בלי לדעת מי זה, לאן הוא נוסע, ואם בכלל יעצור.</p>
+        <h2>20 דקות ברכב. לפעמים שעה וחצי באוטובוס.</h2>
+        <div class="stage stage--single"><div class="scene is-on" data-scene="wait"></div></div>
+        <p>מחכים בתחנה בשמש ובגשם, ומצביעים לרכבים שלא עוצרים. וכשמישהו כבר עוצר, לא יודעים מי זה ולאן הוא נוסע.</p>
       </div>
     </section>
 
-    <!-- 5. The turn: knowing in advance -->
-    <section class="stop stop--peak" id="peak" data-road data-side="start" data-rider="pickup" style="--h:125vh">
+    <!-- 2. The turn: knowing in advance -->
+    <section class="stop stop--peak" id="peak" data-road data-side="end" data-rider="pickup" style="--h:110vh">
       <div class="card glass">
         <h2 class="peak-title">יודעים מראש.</h2>
-        <p class="peak-lines"><span>מי עובר.</span> <span>מתי.</span> <span>ואיפה נפגשים.</span></p>
-        <p>On My Way מחברת בין נהגים לטרמפיסטים, כך שקובעים מראש במקום לחכות שעות בצד הכביש. אתה רואה מראש מי הנהג שאוסף אותך, והנהג רואה את מי הוא אוסף. כשכבר יש דירוגים וביקורות של אנשים שנסעו איתם, רואים גם אותם. אנחנו עדיין לא מאמתים זהות.</p>
+        <p>באפליקציה רואים מי נוסע לכיוון שלכם ומתי, וקובעים נקודת מפגש לפני שיוצאים. הנהג רואה את מי הוא אוסף וכמה דקות זה מוסיף לו, והנוסע רואה מי אוסף אותו.</p>
+        <a class="cta cta--mid" href="https://onmyway.co.il/app/" data-download data-src="mid">
+        <span class="cta-badge" aria-hidden="true"><svg class="cta-icon" viewBox="0 0 24 24"><path d="M5 12h12m0 0-5-5m5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" transform="rotate(180 12 12)"/></svg></span>
+        פתח את האפליקציה · חינם
+      </a>
       </div>
     </section>
 
-    <!-- 6. The message -->
-    <section class="stop stop--message" data-road data-side="end" style="--h:82vh">
+    <!-- 3. Safety -->
+    <section class="stop stop--safety" data-road data-side="start" style="--h:90vh">
       <div class="card glass reveal">
-        <h2>ולך תדע, אולי מישהו כבר נוסע לידך.</h2>
-        <p>גם כשאתה סתם צריך להגיע ממקום למקום בעיר. אפשר לפרסם רק לחברים, רק למי שאתה מכיר. אולי בדיוק מישהו מהם נוסע לאזור שלך, ואתה פשוט לא יודע.</p>
-        <svg class="city" viewBox="0 0 320 120" aria-hidden="true">
-          <g class="streets"><path d="M0 30H320M0 90H320M60 0V120M160 0V120M260 0V120"/></g>
-          <circle class="friend f1" cx="0" cy="30" r="6"/>
-          <circle class="friend f2" cx="160" cy="0" r="6"/>
-          <circle class="friend f3" cx="320" cy="90" r="6"/>
-          <circle class="me-ring" cx="210" cy="90" r="9"/>
-          <circle class="me" cx="210" cy="90" r="7"/>
-        </svg>
+        <h2>מה כבר יש בשביל הבטיחות</h2>
+        <div class="safety">
+          <ul class="checks">
+            <li>רק מגיל 18 ומעלה.</li>
+            <li>דירוגים וביקורות של מי שכבר נסע עם הנהג או הנוסע.</li>
+            <li>דיווח וחסימה בלחיצה אחת.</li>
+            <li>קוד איסוף אישי: הנסיעה מתחילה רק כשהנהג מקליד את הקוד של הנוסע.</li>
+            <li>שיתוף הנסיעה עם מי שתבחרו, שליחת מיקום בצ׳אט וכפתור SOS.</li>
+          </ul>
+          <div class="phone phone--sm"><img src="shots/ride.jpg" width="600" height="1298" alt="מסך נסיעה שסוכמה: שיתוף נסיעה וכפתור SOS" loading="lazy" decoding="async"></div>
+        </div>
+        <p class="fine">עוד אין אימות של תעודת זהות. נוסיף אותו בהמשך.</p>
+      </div>
+    </section>
+
+    <!-- 4. Friends -->
+    <section class="stop stop--message" data-road data-side="end" style="--h:70vh">
+      <div class="card glass reveal">
+        <h2>ולכו תדעו, אולי מישהו כבר נוסע לידכם.</h2>
+        <p>אפשר להראות את הבקשה רק לחברים, או לחברים של חברים. אולי בדיוק מישהו מהם נוסע לכיוון שלכם, גם בתוך העיר.</p>
       </div>
     </section>
 
     <section class="stop stop--close" data-side="center">
       <span class="dest" data-road aria-hidden="true"></span>
       <div class="card glass reveal">
-        <h2>אז מה אומרים, רוצים להיות הראשונים שמנסים?</h2>
-        <a class="cta cta--lg" href="https://onmyway.co.il/app/" data-download>
-          <span class="cta-badge" aria-hidden="true"><svg class="cta-icon" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          הורד את האפליקציה
+        <h2>רוצים להיות הראשונים שמנסים?</h2>
+        <a class="cta cta--lg" href="https://onmyway.co.il/app/" data-download data-src="end" id="end-cta">
+        <span class="cta-badge" aria-hidden="true"><svg class="cta-icon" viewBox="0 0 24 24"><path d="M5 12h12m0 0-5-5m5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" transform="rotate(180 12 12)"/></svg></span>
+        פתח את האפליקציה · חינם
+      </a>
+        <p class="cta-sub">חינם · בלי חנות אפליקציות · נפתח ישר בדפדפן</p>
+        <a class="share" id="share-wa" href="https://wa.me/?text=%D7%9E%D7%A6%D7%90%D7%AA%D7%99%20%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%94%20%D7%A9%D7%9E%D7%97%D7%91%D7%A8%D7%AA%20%D7%A0%D7%94%D7%92%D7%99%D7%9D%20%D7%A9%D7%9B%D7%91%D7%A8%20%D7%A0%D7%95%D7%A1%D7%A2%D7%99%D7%9D%20%D7%A2%D7%9D%20%D7%9E%D7%99%20%D7%A9%D7%A6%D7%A8%D7%99%D7%9A%20%D7%98%D7%A8%D7%9E%D7%A4%20%D7%9C%D7%90%D7%95%D7%AA%D7%95%20%D7%9B%D7%99%D7%95%D7%95%D7%9F.%20%D7%97%D7%99%D7%A0%D7%9D%3A%20https%3A%2F%2Fonmyway.co.il%2F%3Fsrc%3Dwa" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+          שלחו לחבר בוואטסאפ
         </a>
+        <p class="share-why">נהגים ונוסעים צריכים להיות באותו אזור. כל חבר שמצטרף מקרב טרמפ.</p>
       </div>
     </section>
   </div>
 </main>
+
+<div class="dock" id="dock">
+  <a class="cta" href="https://onmyway.co.il/app/" data-download data-src="dock">
+        <span class="cta-badge" aria-hidden="true"><svg class="cta-icon" viewBox="0 0 24 24"><path d="M5 12h12m0 0-5-5m5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" transform="rotate(180 12 12)"/></svg></span>
+        פתח את האפליקציה · חינם
+      </a>
+  <p>חינם · בלי חנות אפליקציות</p>
+</div>
 
 <footer class="foot">
   <a class="brand brand--foot" href="#top"><img src="logo.svg" alt="" width="18" height="24"><span dir="ltr">On My Way</span></a>
@@ -259,80 +251,24 @@
 </footer>
 
 <script src="scenes.js" defer></script>
-<dialog class="get glass" id="get" aria-labelledby="get-h-choose">
+<dialog class="get glass" id="get" aria-labelledby="get-h-desktop">
   <button type="button" class="get-x" id="get-x" aria-label="סגור">✕</button>
-
-  <div class="get-body" data-env="phone" hidden>
-    <div class="get-step" data-step="choose">
-      <h2 id="get-h-choose" tabindex="-1">איזה טלפון יש לך?</h2>
-      <p>נראה לך איך מתקינים, בכמה צעדים קצרים.</p>
-      <p class="get-fine" data-desktop-only hidden>את ההתקנה עושים בטלפון. בחרו, וקוד QR יופיע ליד ההוראות.</p>
-      <div class="get-choices">
-        <button type="button" class="choice" data-pick="android">
-          <svg viewBox="0 0 48 64" aria-hidden="true"><rect x="6" y="3" width="36" height="58" rx="7" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="24" cy="53" r="2.4" fill="currentColor"/><path d="M18 11h12" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
-          <span class="choice-name">אנדרואיד</span><span class="choice-tag" hidden>נראה שזה שלך</span>
-        </button>
-        <button type="button" class="choice" data-pick="ios">
-          <svg viewBox="0 0 48 64" aria-hidden="true"><rect x="6" y="3" width="36" height="58" rx="9" fill="none" stroke="currentColor" stroke-width="3"/><rect x="16" y="8" width="16" height="5" rx="2.5" fill="currentColor"/><path d="M18 54h12" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
-          <span class="choice-name">אייפון</span><span class="choice-tag" hidden>נראה שזה שלך</span>
-        </button>
-      </div>
-    </div>
-
-    <div class="get-step" data-step="android" hidden>
-      <h2 id="get-h-android" tabindex="-1">התקנה באנדרואיד</h2>
-      <ol class="get-steps">
-        <li>לחצו על ״פתח את האפליקציה״. היא נפתחת ב־Chrome.</li>
-        <li>כשיופיע החלון ״להתקין את On My Way?״, לחצו ״התקן״.</li>
-        <li>לא הופיע חלון? בתפריט של Chrome (<span dir="ltr">⋮</span> למעלה) בחרו ״התקן אפליקציה״ או ״הוסף למסך הבית״.</li>
-        <li>פתחו את On My Way מהאייקון שנוסף במסך הבית.</li>
-      </ol>
-      <div class="get-qrbox" data-desktop-only hidden>
-        <img class="get-qr" src="qr-app.svg" width="160" height="160" alt="קוד QR לפתיחת האפליקציה בטלפון">
-        <p>סרקו עם מצלמת הטלפון, ופתחו שם. אחר כך ההוראות למעלה.</p>
-      </div>
-      <div class="get-actions">
-        <a class="cta" href="https://onmyway.co.il/app/" data-open-app>פתח את האפליקציה</a>
-        <button type="button" class="get-back" data-back>זה לא הטלפון שלי</button>
-      </div>
-    </div>
-
-    <div class="get-step" data-step="ios" hidden>
-      <h2 id="get-h-ios" tabindex="-1">התקנה באייפון</h2>
-      <ol class="get-steps">
-        <li>לחצו על ״פתח את האפליקציה״. חשוב: ב־Safari.</li>
-        <li>לחצו על כפתור השיתוף <svg class="get-glyph" viewBox="0 0 24 24" role="img" aria-label="ריבוע עם חץ למעלה"><path d="M12 15V3m0 0L8 7m4-4l4 4M6 11H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> בתחתית המסך.</li>
-        <li>גללו ובחרו ״הוסף למסך הבית״ <svg class="get-glyph" viewBox="0 0 24 24" role="img" aria-label="ריבוע עם פלוס"><rect x="3.5" y="3.5" width="17" height="17" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 8v8M8 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></li>
-        <li>לחצו ״הוסף״ בפינה, ופתחו את On My Way מהאייקון.</li>
-      </ol>
-      <p class="get-fine">באייפון, התראות עובדות רק כשהאפליקציה מותקנת במסך הבית. אחרי שנפתח, האפליקציה תציג את הצעדים האלה שוב.</p>
-      <div class="get-qrbox" data-desktop-only hidden>
-        <img class="get-qr" src="qr-app.svg" width="160" height="160" alt="קוד QR לפתיחת האפליקציה בטלפון">
-        <p>סרקו עם מצלמת הטלפון, ופתחו שם. אחר כך ההוראות למעלה.</p>
-      </div>
-      <div class="get-actions">
-        <a class="cta" href="https://onmyway.co.il/app/" data-open-app>פתח את האפליקציה</a>
-        <button type="button" class="get-back" data-back>זה לא הטלפון שלי</button>
-      </div>
-    </div>
-  </div>
 
   <div class="get-body" data-env="desktop" hidden>
     <h2 id="get-h-desktop" tabindex="-1">האפליקציה מיועדת לטלפון</h2>
-    <p>סרקו את הקוד עם מצלמת הטלפון, ונפתח שם את On My Way.</p>
+    <p>סרקו את הקוד עם מצלמת הטלפון, ו־On My Way תיפתח שם. היא תראה לכם איך מוסיפים אותה למסך הבית.</p>
     <img class="get-qr" src="qr-app.svg" width="200" height="200" alt="קוד QR לפתיחת האפליקציה בטלפון">
-    <a class="get-link" href="https://onmyway.co.il/app/">או פתחו אותה כאן בדפדפן</a>
+    <a class="get-link" id="get-here" href="https://onmyway.co.il/app/">או פתחו אותה כאן בדפדפן</a>
   </div>
 
   <div class="get-body" data-env="inapp" hidden>
     <h2 id="get-h-inapp" tabindex="-1">פותחים בדפדפן רגיל</h2>
-    <p>את האפליקציה אי אפשר להתקין מתוך הדפדפן הפנימי שבו נפתח הדף. שני צעדים:</p>
-    <ol class="get-steps"><li>לחצו על <span dir="ltr">⋯</span> בפינת המסך.</li><li>בחרו ״פתח בדפדפן״ (Chrome או Safari).</li></ol>
+    <p>מתוך הדפדפן של אינסטגרם (או אפליקציה אחרת) אי אפשר להתקין את On My Way.</p>
     <div class="get-actions">
-      <button type="button" class="cta" id="get-copy">העתק קישור</button>
-      <a class="cta cta--ghost" id="get-try" href="https://onmyway.co.il/app/">נסה לפתוח בדפדפן</a>
+      <a class="cta" id="get-try" href="https://onmyway.co.il/app/">פתח בדפדפן</a>
+      <button type="button" class="cta cta--ghost" id="get-copy">העתק קישור</button>
     </div>
-    <p class="get-fine">אם זה לא נפתח, העתיקו את הקישור והדביקו בדפדפן.</p>
+    <p class="get-fine">לא נפתח? לחצו על <span dir="ltr">⋯</span> בפינת המסך ובחרו ״פתח בדפדפן״, או העתיקו את הקישור והדביקו אותו ב־Chrome או ב־Safari.</p>
   </div>
 </dialog>
 

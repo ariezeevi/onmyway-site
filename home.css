@@ -57,8 +57,6 @@ body::before{content:"";position:fixed;inset:-10vh -10vw;z-index:0;pointer-event
   padding:7px;padding-inline-start:18px;border-radius:999px}
 .brand{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:1.0625rem;letter-spacing:.01em;color:var(--ink)}
 .brand img{display:block;height:28px;width:auto}
-.bar .cta{opacity:0;transform:translateY(-4px);pointer-events:none;transition:opacity .25s var(--ease),transform .25s var(--ease),background .16s}
-.bar.show-cta .cta{opacity:1;transform:none;pointer-events:auto}
 
 /* Buttons */
 .cta{position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:10px;white-space:nowrap;
@@ -128,9 +126,10 @@ main{position:relative;z-index:1}
 .inapp-actions{display:flex;gap:8px;align-items:center;flex:none}
 .inapp button{font:inherit;cursor:pointer;border:0;border-radius:999px;transition:transform .14s var(--ease),background .16s}
 .inapp button:active{transform:scale(.96)}
-.inapp-copy{background:var(--blue);color:#fff;font-weight:700;font-size:.875rem;height:40px;padding:0 14px}
+.inapp-open{display:inline-flex;align-items:center;background:var(--blue);color:#fff;font-weight:700;font-size:.875rem;height:40px;padding:0 16px;border-radius:999px;text-decoration:none}
+.inapp-copy{background:rgba(30,111,217,.1);color:var(--blue-deep);font-weight:700;font-size:.875rem;height:40px;padding:0 14px}
 .inapp-x{background:rgba(15,23,42,.06);width:40px;height:40px;color:var(--ink-soft);font-size:1rem}
-@media (max-width:759px){.inapp{flex-direction:column;align-items:stretch;top:64px}.inapp-actions{justify-content:space-between}.inapp-copy{flex:1}}
+@media (max-width:759px){.inapp{flex-direction:column;align-items:stretch;top:64px}.inapp-actions{justify-content:space-between}.inapp-open{flex:1;justify-content:center}}
 
 /* Journey and the road */
 .journey{position:relative;padding-bottom:4vh}
@@ -216,9 +215,7 @@ html:not(.js) .captions li{grid-area:auto;margin-bottom:6px}
 /* Peak */
 .peak-title{font-size:clamp(3.2rem,7vw,6.4rem)!important;line-height:1!important;color:var(--orange-text);letter-spacing:0}
 .peak-lines{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:14px!important;font-size:clamp(1.3rem,2.2vw,1.8rem)!important;font-weight:800;color:var(--ink)!important}
-.stop--peak .card{width:min(600px,48%);position:relative;top:27vh}
-.js #peak .card{opacity:0;transform:translateY(18px) scale(.97);transition:opacity .45s var(--ease),transform .7s cubic-bezier(.34,1.45,.64,1)}
-.js #peak.got .card{opacity:1;transform:none}
+.stop--peak .card{width:min(600px,48%);position:relative;top:18vh}
 .js #peak .peak-lines span{opacity:0;transform:translateY(8px);display:inline-block;transition:opacity .4s var(--ease),transform .5s var(--ease)}
 .js #peak.got .peak-lines span{opacity:1;transform:none}
 .js #peak.got .peak-lines span:nth-child(2){transition-delay:.15s}
@@ -360,7 +357,8 @@ html:not(.js) .captions li{grid-area:auto;margin-bottom:6px}
   .bar .cta--sm{height:40px;padding:0 14px;font-size:.875rem}
   .hero{grid-template-columns:1fr;padding:84px 20px 36px;gap:6px;align-content:center}
   .hero-mark{order:-1;justify-content:flex-start}
-  .mark{width:auto;height:min(26svh,210px)}
+  .mark{width:auto;height:min(18svh,150px)}
+  .hero{min-height:auto}
   .hero h1{font-size:clamp(2.3rem,10.2vw,2.9rem)}
   .hook{font-size:1rem;padding:11px 14px}
   .hero .cta{width:100%}
@@ -473,3 +471,59 @@ html.calm .get[open]{animation:none}
 @media (hover:hover){.get-back:hover{color:var(--ink)}}
 .get-steps li::marker{font-weight:700;color:var(--blue-deep)}
 .get [hidden]{display:none!important}
+
+/* ---------- Screenshots of the real app, in a phone frame ---------- */
+.screens{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:12px var(--gutter) 56px;text-align:center}
+.screens h2{font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.15}
+.shots{display:flex;justify-content:center;gap:clamp(18px,3vw,40px);margin-top:28px}
+.shot{margin:0;display:flex;flex-direction:column;align-items:center;gap:14px;flex:none;width:clamp(200px,22vw,260px)}
+.shot figcaption{font-size:1rem;line-height:1.5;color:var(--ink-soft);max-width:26ch;text-wrap:balance}
+.phone{width:100%;padding:7px;border-radius:38px;background:#0F172A;
+  box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.12),0 30px 60px -28px rgba(24,60,120,.55),0 6px 14px -6px rgba(15,23,42,.3)}
+.phone img{display:block;width:100%;height:auto;aspect-ratio:390/844;object-fit:cover;object-position:top;border-radius:31px;background:#F2F4F8}
+.phone--sm{width:150px;flex:none;border-radius:28px;padding:5px}
+.phone--sm img{border-radius:23px}
+
+/* ---------- Safety ---------- */
+.card h2 + .stage--single{margin-top:18px}
+.stage--single + p{margin-top:16px}
+.safety{display:flex;gap:22px;align-items:flex-start;margin-top:18px}
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:10px;flex:1}
+.checks li{position:relative;padding-inline-start:30px;font-size:1.0625rem;line-height:1.5;color:var(--ink)}
+.checks li::before{content:"";position:absolute;inset-inline-start:0;top:.2em;width:20px;height:20px;border-radius:50%;
+  background:var(--blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat}
+.card .fine{font-size:.9375rem;margin-top:16px}
+
+/* ---------- Buttons in the story, WhatsApp share ---------- */
+.cta--mid{margin-top:24px}
+.stop--close .cta-sub{text-align:center}
+.share{display:inline-flex;align-items:center;gap:10px;margin-top:22px;min-height:52px;padding:0 22px;border-radius:999px;
+  background:#fff;color:#0E7A4B;font-weight:700;font-size:1.0625rem;text-decoration:none;box-shadow:inset 0 0 0 2px rgba(14,122,75,.35);transition:background .16s,transform .14s var(--ease)}
+.share svg{width:22px;height:22px}
+.share:active{transform:scale(.97)}
+@media (hover:hover) and (pointer:fine){.share:hover{background:rgba(37,211,102,.08)}}
+.share-why{font-size:.9375rem!important;margin-top:10px!important;max-width:40ch;text-align:center}
+
+/* ---------- Phone: a button that is always on screen ---------- */
+.dock{display:none}
+@media (max-width:759px){
+  .bar .cta{display:none}
+  .dock{display:block;position:fixed;inset-inline:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:48;
+    padding:8px 8px 6px;border-radius:26px;text-align:center;
+    background:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(18px) saturate(180%);backdrop-filter:blur(18px) saturate(180%);
+    box-shadow:0 18px 40px -18px rgba(24,60,120,.5),inset 0 0 0 1px rgba(255,255,255,.9);
+    transition:transform .3s var(--ease),opacity .3s var(--ease)}
+  .dock .cta{width:100%;height:54px;font-size:1.0625rem}
+  .dock p{margin-top:4px;font-size:.8125rem;color:var(--ink-soft)}
+  .dock.is-away{transform:translateY(130%);opacity:0;pointer-events:none}
+  .foot{padding-bottom:120px}
+  .screens{padding:4px 0 40px}
+  .screens h2{padding:0 20px}
+  .shots{justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 20px 14px;scroll-padding-inline:20px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .shots::-webkit-scrollbar{display:none}
+  .shot{width:64vw;max-width:240px;scroll-snap-align:start}
+  .safety{flex-direction:column}
+  .phone--sm{width:120px;align-self:center}
+  .share{width:100%;justify-content:center}
+}
+html.calm .dock{transition:none}
