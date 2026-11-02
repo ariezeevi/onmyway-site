@@ -531,3 +531,39 @@ html.calm .dock{transition:none}
 /* A short animated scene (video made in Dreamina), the poster stands in until it plays */
 .stage--video{aspect-ratio:16/9;background:#E9EEF6}
 .clip{display:block;width:100%;height:100%;object-fit:cover}
+
+/* ---------- Text under the clips: short beats that are read, not skipped ---------- */
+.beats{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}
+.beats li{display:flex;align-items:center;gap:12px;font-size:1.1875rem;line-height:1.4;font-weight:500;color:var(--ink)}
+.beat-i{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:12px;font-size:1.25rem;line-height:1;
+  background:#fff;box-shadow:0 4px 14px -6px rgba(24,60,120,.35),inset 0 0 0 1px rgba(15,23,42,.06)}
+.beats b,.lead b,.side b{font-weight:700;background:linear-gradient(transparent 62%,rgba(239,108,0,.22) 0);padding:0 2px;border-radius:2px}
+.card p.lead{margin-top:16px;font-size:1.25rem;line-height:1.45;font-weight:500;color:var(--ink);max-width:none}
+.sides{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.card p.side{margin:0;padding:14px 14px 14px;border-radius:16px;font-size:1.0625rem;line-height:1.45;color:var(--ink);max-width:none}
+.side-tag{display:block;margin-bottom:4px;font-weight:700;font-size:.9375rem}
+.side--driver{background:rgba(30,111,217,.09)}.side--driver .side-tag{color:var(--blue-deep)}
+.side--rider{background:rgba(239,108,0,.1)}.side--rider .side-tag{color:var(--orange-text)}
+.side--driver b{background:linear-gradient(transparent 62%,rgba(30,111,217,.2) 0)}
+.safety .beats{margin-top:0;flex:1}
+.safety .beats li{font-size:1.0625rem}
+/* The beats come in one after another once the card is on screen */
+.js .reveal .beats li{opacity:0;transform:translateY(10px)}
+.js .reveal.in .beats li{opacity:1;transform:none;transition:opacity .5s var(--ease),transform .6s var(--ease)}
+.js .reveal.in .beats li:nth-child(2){transition-delay:.25s}
+.js .reveal.in .beats li:nth-child(3){transition-delay:.5s}
+.js .reveal.in .beats li:nth-child(4){transition-delay:.75s}
+.js .reveal.in .beats li:nth-child(5){transition-delay:1s}
+@media (prefers-reduced-motion:reduce){.js .reveal .beats li{opacity:1!important;transform:none!important;transition:none!important}}
+html.calm .reveal .beats li{opacity:1!important;transform:none!important;transition:none!important}
+@media (max-width:759px){
+  .stop--peak .card{top:0}
+  .beats li{font-size:1.0625rem;gap:10px}
+  .beat-i{width:36px;height:36px;font-size:1.125rem}
+  .card p.lead{font-size:1.125rem}
+  .sides{grid-template-columns:1fr}
+  .safety .phone--sm{display:none}
+  .cta--mid{width:100%;justify-content:center;padding-inline:14px;font-size:1rem}
+}
+/* On a narrower computer screen the clip already shows the pickup, so the phone gives the list its room */
+@media (max-width:1279px){.safety .phone--sm{display:none}}
