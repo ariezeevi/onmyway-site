@@ -1,0 +1,41 @@
+/* App screens: three phones overlapping, the middle one in front */
+.stop--screens .card{width:min(760px,100%);display:flex;flex-direction:column;align-items:center;text-align:center}
+.stop--screens h2{font-size:clamp(2rem,4vw,3.4rem)}
+.stop--screens .card > p{margin-inline:auto}
+
+.phones{--pw:clamp(190px,24vh,250px);position:relative;width:100%;height:calc(var(--pw) * 2.164 + 8px);margin-top:28px;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.phones .phone{position:absolute;top:0;left:50%;margin:0;width:var(--pw);height:calc(var(--pw) * 2.164);
+  border-radius:34px;padding:7px;background:var(--ink);
+  box-shadow:0 30px 60px -24px rgba(15,23,42,.45),0 6px 14px -6px rgba(15,23,42,.25);
+  transform:translateX(-50%) scale(.8);opacity:0;pointer-events:none;
+  transition:transform .6s var(--ease),opacity .6s var(--ease),filter .6s var(--ease)}
+.phones .phone figcaption{display:none} /* read into the caption line below by screens.js */
+.phones .phone img{display:block;width:100%;height:100%;object-fit:cover;object-position:top;border-radius:28px;background:var(--canvas)}
+.phones .phone[data-pos="active"]{transform:translateX(-50%) scale(1);opacity:1;z-index:3;pointer-events:auto}
+.phones .phone[data-pos="before"],.phones .phone[data-pos="after"]{opacity:.9;z-index:2;filter:saturate(.85) brightness(.97);pointer-events:auto;cursor:pointer}
+/* Right-to-left: the next screen waits on the left, the previous one on the right */
+.phones .phone[data-pos="after"]{transform:translateX(calc(-50% - 58%)) scale(.84) rotate(-4deg)}
+.phones .phone[data-pos="before"]{transform:translateX(calc(-50% + 58%)) scale(.84) rotate(4deg)}
+
+.phones-cap{margin-top:18px!important;min-height:1.65em;font-weight:500;color:var(--ink)!important}
+.phones-nav{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px}
+.phones-nav button{font:inherit;cursor:pointer;color:var(--ink);background:rgba(255,255,255,.7);
+  border:1px solid rgba(15,23,42,.14);border-radius:999px;min-width:44px;min-height:44px;
+  display:inline-flex;align-items:center;justify-content:center;transition:background .16s var(--ease)}
+.phones-nav svg{width:20px;height:20px}
+@media (hover:hover){.phones-nav button:hover{background:#fff}}
+.phones-dots{display:flex;gap:2px}
+.phones-dots button{background:transparent;border:0;min-width:28px}
+.phones-dots button::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--ghost);transition:width .3s var(--ease),background .3s}
+.phones-dots button[aria-current="true"]::after{width:22px;border-radius:4px;background:var(--blue)}
+
+@media (max-width:759px){
+  .phones{--pw:min(46vw,200px)}
+  .phones .phone{border-radius:28px;padding:6px}
+  .phones .phone img{border-radius:23px}
+  .phones .phone[data-pos="after"]{transform:translateX(calc(-50% - 46%)) scale(.8) rotate(-4deg)}
+  .phones .phone[data-pos="before"]{transform:translateX(calc(-50% + 46%)) scale(.8) rotate(4deg)}
+}
+
+@media (prefers-reduced-motion:reduce){.phones .phone,.phones-dots button::after{transition:opacity .3s ease}}
+html.calm .phones .phone,html.calm .phones-dots button::after{transition:opacity .3s ease}

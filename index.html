@@ -32,6 +32,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preload" href="fonts/Heebo_800ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="screens.css">
 <script>document.documentElement.classList.add('js')</script>
 <script src="a11y.js"></script>
 </head>
@@ -113,21 +114,25 @@
     </div>
   </section>
 
-  <section class="screens" aria-labelledby="screens-h">
+  <section class="screens phones-wrap" aria-labelledby="screens-h">
     <h2 id="screens-h">ככה זה נראה באפליקציה</h2>
-    <div class="shots" tabindex="0" aria-label="צילומי מסך מהאפליקציה">
-      <figure class="shot">
-        <div class="phone"><img src="shots/home.jpg" width="390" height="844" alt="מסך הנהג: בוחרים יעד, ובמפה רואים את ירושלים" decoding="async"></div>
-        <figcaption>בוחרים לאן נוסעים. שאר הפרטים כבר ממולאים.</figcaption>
-      </figure>
-      <figure class="shot">
-        <div class="phone"><img src="shots/request.jpg" width="600" height="1298" alt="בקשה להצטרף: נועה רוצה להצטרף אליך, מוסיף 3 דקות" loading="lazy" decoding="async"></div>
-        <figcaption>נהג מקבל בקשה ורואה כמה דקות זה מוסיף לו.</figcaption>
-      </figure>
-      <figure class="shot">
-        <div class="phone"><img src="shots/chat.jpg" width="600" height="1298" alt="צ׳אט בין הנהג לנוסעת: היא מחכה בתחנה, הוא מגיע בעוד 7 דקות" loading="lazy" decoding="async"></div>
-        <figcaption>מתאמים בצ׳אט שבתוך האפליקציה, ונפגשים.</figcaption>
-      </figure>
+    <div class="phones" id="phones" role="group" aria-roledescription="קרוסלה" aria-label="צילומי מסך מהאפליקציה">
+      <figure class="phone"><img src="shots/home.jpg" width="390" height="844" alt="מסך הנהג: בוחרים יעד, ובמפה רואים את ירושלים" decoding="async"><figcaption>בוחרים לאן נוסעים. שאר הפרטים כבר ממולאים.</figcaption></figure>
+      <figure class="phone"><img src="screens/results.webp" width="520" height="1126" alt="תוצאות חיפוש מתל אביב לירושלים: כרטיסי נהגים לדוגמה עם שעת איסוף, כמה דקות עד האיסוף, דירוג ומקומות פנויים" decoding="async"><figcaption>טרמפיסט רואה מי עובר, ומתי הוא מגיע אליו.</figcaption></figure>
+      <figure class="phone"><img src="shots/request.jpg" width="600" height="1298" alt="בקשה להצטרף: נועה רוצה להצטרף אליך, מוסיף 3 דקות" decoding="async"><figcaption>נהג מקבל בקשה ורואה כמה דקות זה מוסיף לו.</figcaption></figure>
+      <figure class="phone"><img src="shots/chat.jpg" width="600" height="1298" alt="צ׳אט בין הנהג לנוסעת: היא מחכה בתחנה, הוא מגיע בעוד 7 דקות" decoding="async"><figcaption>מתאמים בצ׳אט שבתוך האפליקציה, ונפגשים.</figcaption></figure>
+    </div>
+    <p class="phones-cap" id="phones-cap" aria-live="polite"></p>
+    <div class="phones-nav">
+      <button type="button" id="phones-prev" aria-label="המסך הקודם"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="phones-dots">
+        <button type="button" aria-label="מסך 1: בחירת יעד"></button>
+        <button type="button" aria-label="מסך 2: נהגים בדרך"></button>
+        <button type="button" aria-label="מסך 3: בקשה להצטרף"></button>
+        <button type="button" aria-label="מסך 4: צ׳אט"></button>
+      </div>
+      <button type="button" id="phones-next" aria-label="המסך הבא"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" id="phones-pause" aria-label="עצור מעבר אוטומטי"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 6.5v11L7 12z" fill="currentColor"/></svg></button>
     </div>
   </section>
 
@@ -274,6 +279,7 @@
 
 <script src="get.js" defer></script>
 <script src="home.js" defer></script>
+<script src="screens.js" defer></script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a829412200fb453aa680180038b7f3cb"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
