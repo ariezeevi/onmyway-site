@@ -275,6 +275,16 @@
   });
   document.querySelectorAll('#hero-cta, #end-cta').forEach((n) => dockIo.observe(n));
 
+  // The animated scene plays only while on screen, and never with reduced motion / the calm switch
+  const clipIo = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      const v = e.target;
+      if (e.isIntersecting && !reduced.matches && !root.classList.contains('calm')) v.play().catch(() => {});
+      else v.pause();
+    });
+  }, { threshold: .25 });
+  document.querySelectorAll('video.clip').forEach((v) => clipIo.observe(v));
+
   let rz;
   const relayout = () => { clearTimeout(rz); rz = setTimeout(layout, 120); };
   addEventListener('scroll', onScroll, { passive: true });
