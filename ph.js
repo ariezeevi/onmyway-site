@@ -16,6 +16,9 @@
       person_profiles: 'identified_only',
       persistence: 'localStorage',
       capture_exceptions: true,
+      // Taps are reported without the text or attributes of what was tapped.
+      mask_all_text: true,
+      mask_all_element_attributes: true,
       // Addresses lose their ?... and #... (an invite link carries a personal code).
       session_recording: { maskAllInputs: true, maskCapturedNetworkRequestFn: function (r) { r.name = clean(r.name); return r; } },
       before_send: function (event) {
